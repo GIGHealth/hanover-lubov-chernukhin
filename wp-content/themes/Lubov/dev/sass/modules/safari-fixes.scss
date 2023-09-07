@@ -1,0 +1,23 @@
+body.is-safari {
+  // background: pink !important;
+  .double-link-blocks {
+    .double-link-blocks-inner {
+      .double-link-block {
+        background-blend-mode: overlay, normal;
+        backdrop-filter: blur(0px);
+        &:hover {
+          border-radius: 50px 50px 10px 50px;
+          .double-link-image {
+            filter: blur(0px) !important;
+            -webkit-filter: blur(0px);
+            transition: 150ms ease-in-out filter;
+          }
+        }
+        .double-link-image {
+          filter: blur(0px);
+          transition: 150ms ease-in-out filter;
+        }
+      }
+    }
+  }
+}

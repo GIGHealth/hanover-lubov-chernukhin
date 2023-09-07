@@ -1,0 +1,229 @@
+@import "./modules/variables";
+@import "./modules/extends";
+@import "./modules/mixins";
+
+// * {
+//   box-sizing: border-box;
+//   color: $black;
+//   font-size: 18px;
+//   line-height: 1.2;
+//   font-family: "Source Sans Pro", Arial, Helvetica, sans-serif;
+// }
+// body:not(.logged-in) {
+//   #wpadminbar {
+//     display: none;
+//   }
+// }
+// .text-orange {
+//   color: $orange;
+// }
+// a {
+//   color: $orange;
+//   transition: 150ms ease-in-out color;
+//   &:hover {
+//     color: $green;
+//     transition: 150ms ease-in-out color;
+//   }
+// }
+// p {
+//   font-weight: 400;
+//   line-height: 1.35;
+// }
+// ul {
+//   padding-left: 20px;
+//   li::marker {
+//     line-height: 1.35;
+//     color: $orange;
+//   }
+// }
+// .body-font {
+//   font-size: 18px !important;
+// }
+// $fws: 400, 600, 700;
+// @each $fw in $fws {
+//   .fw-#{$fw} {
+//     font-weight: $fw;
+//   }
+// }
+// .content-row {
+//   scroll-margin-top: 150px;
+// }
+// .content-rows {
+//   padding-top: 140px;
+// }
+// img,
+// picture,
+// source {
+//   max-width: 100%;
+//   width: auto;
+//   height: auto;
+//   object-fit: cover;
+//   object-position: center;
+// }
+// body {
+//   &.active-menu {
+//     overflow: hidden;
+//     .wrapper,
+//     .footer {
+//       opacity: 0;
+//       transition: 150ms linear opacity;
+//     }
+//   }
+//   background-color: $grey;
+// }
+// body:not(.who-we-are) {
+//   .wrapper {
+//     overflow-x: hidden;
+//   }
+// }
+// .sr-only {
+//   position: absolute !important;
+//   width: 1px !important;
+//   height: 1px !important;
+//   padding: 0 !important;
+//   margin: -1px !important;
+//   overflow: hidden !important;
+//   clip: rect(0, 0, 0, 0) !important;
+//   white-space: nowrap !important;
+//   border: 0 !important;
+// }
+
+// #primary {
+//   background-color: $grey;
+// }
+// .site-bounds {
+//   max-width: 1730px;
+//   margin-left: auto;
+//   margin-right: auto;
+//   position: relative;
+//   padding: 0 20px;
+// }
+// .content-bounds {
+//   max-width: 1400px;
+//   margin-left: auto;
+//   margin-right: auto;
+//   position: relative;
+//   padding: 0 20px;
+// }
+
+// .text-bounds {
+//   max-width: 1160px;
+//   margin-left: auto;
+//   margin-right: auto;
+//   position: relative;
+//   padding: 0 20px;
+// }
+// .flex-equal {
+//   flex: 1;
+// }
+// .bg-green {
+//   background-color: $green;
+// }
+// .pill-container {
+//   display: flex;
+//   align-items: center;
+//   justify-content: flex-start;
+//   .pill {
+//     line-height: 1;
+//     padding: 8px 10px;
+//     border-radius: 40px;
+//     color: $white;
+//     font-size: 14px;
+//   }
+// }
+// h1,
+// h2,
+// h3,
+// h4 {
+//   font-weight: 600;
+//   margin-bottom: 32px;
+//   color: $blue;
+// }
+// h2 {
+//   font-size: 28px;
+// }
+// h3 {
+//   font-size: 28px;
+// }
+// h4 {
+//   font-size: 28px;
+// }
+
+// // .team-member-modal-background {
+// //   display: flex;
+// //   align-items: center;
+// //   justify-content: center;
+// //   position: fixed;
+// //   top: 0;
+// //   left: 0;
+// //   right: 0;
+// //   bottom: 0;
+// //   width: 100vw;
+// //   height: 100vh;
+// //   z-index: 500;
+// //   background: white;
+// //   opacity: 0;
+// //   pointer-events: auto;
+// //   transition: 250ms ease-in-out opacity;
+// //   &.show {
+// //     opacity: 1;
+// //     pointer-events: auto;
+// //     transition: 250ms ease-in-out opacity;
+// //   }
+// // }
+
+// aside.slide-menu {
+//   transform: translateX(350px);
+//   transition: 150ms ease-in-out transform;
+//   &.active {
+//     transform: translateX(0);
+//     transition: 150ms ease-in-out transform;
+//   }
+// }
+
+// .under-slide-bg {
+//   opacity: 0;
+//   pointer-events: none;
+//   width: 100%;
+//   height: 100%;
+//   position: fixed;
+//   top: 0;
+//   left: 0;
+//   right: 0;
+//   bottom: 0;
+//   z-index: 250;
+//   @extend %gradient;
+//   transition: 150ms ease-in-out opacity;
+//   &.active {
+//     opacity: 1;
+//     transition: 150ms ease-in-out opacity;
+//     pointer-events: auto;
+//   }
+// }
+
+// figure {
+//   display: flex;
+//   align-items: flex-start;
+//   justify-content: space-between;
+//   gap: 40px;
+//   width: 100% !important;
+//   picture,
+//   img,
+//   source {
+//     flex: 5;
+//     width: 100%;
+//   }
+//   figcaption {
+//     flex: 2;
+//   }
+// }
+// @media only screen and (max-width: 766px) {
+//   figure {
+//     flex-direction: column;
+//     gap: 20px;
+//   }
+// }
+
+// hr {
+//   display: none;
+// }
