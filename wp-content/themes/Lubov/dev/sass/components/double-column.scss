@@ -1,0 +1,60 @@
+.double-column p, .double-column li {
+    font-family: $manrope-font;
+    font-size: 24px;
+}
+
+.double-column-inner {
+    gap: 50px;
+}
+
+.link-container {
+    a {
+        text-decoration: none;
+    }
+    .link-text {
+      color: $orange;
+      font-family: $title-font;
+      font-size: 25px;
+      line-height: 35px;
+      border-bottom: 1px solid $orange;
+    }
+    .arrow-right {
+        padding-left: 8px;
+    }
+}
+
+.bg-green {
+    .link-text {
+      color: white;
+      font-family: $title-font;
+      font-size: 25px;
+      line-height: 35px;
+      border-bottom: 1px solid white;
+    }
+    .arrow-right {
+        padding-left: 8px;
+    }
+}
+
+.slide-copy {
+  display: none;
+}
+
+.slide-link, .slide-link-close {
+  color: $orange;
+  font-family: $title-font;
+  font-size: 25px;
+  line-height: 35px;
+  border-bottom: 1px solid $orange;
+  cursor: pointer;
+  .arrow-right {
+    padding-left: 8px;
+}
+}
+
+
+  @media screen and (max-width: 901px) {
+    .carousel-wrap {
+        width: 100%;
+      }
+  }

@@ -1,0 +1,57 @@
+.owl-theme .owl-dots {
+    position: absolute;
+    left: 50%; /* position the left edge of the element at the middle of the parent */
+    bottom: 0 ;
+    transform: translate(-50%, -50%);
+    display: flex;
+    gap: 10px;
+    .owl-dot {
+        span {
+            background: $grey !important;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            border: 1px solid $grey !important;
+        }
+        &.active span{
+           border: 1px solid $grey !important;
+           background: #163216 !important; 
+        }
+    }
+} 
+
+/* fix blank or flashing items on carousel */
+.owl-carousel .item {
+    position: relative;
+    z-index: 100; 
+    -webkit-backface-visibility: hidden; 
+  }
+
+  .carousel-wrap {
+    flex: 4;
+    overflow: hidden;
+  }
+
+  .double-column-inner-copy {
+    flex: 6;
+  }
+  
+  .owl-nav {
+    display: none;
+  }
+
+
+  .owl-carousel .owl-stage {
+    display: flex;
+  }
+
+ .owl-carousel .owl-item img {
+    width: auto;
+    height: 100%;
+  }
+
+  @media screen and (max-width: 901px) {
+    .carousel-wrap {
+        width: 100%;
+      }
+  }

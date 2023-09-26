@@ -57,5 +57,18 @@
     //*********************** */
     //** => ELEMENTS
     //*********************** */
+    $(".slide-link, .slide-link-close").click(function () {
+      console.log('click');
+      $(".slide-copy").slideToggle("slow");
+      var $this = $(this);
+      $this.toggleClass("open");
+    });
+    $('.image-container.owl-carousel').owlCarousel({
+      loop: true,
+      nav: false,
+      autoplay: true,
+      autoplayHoverPause: true,
+      items: 1
+    });
   }); //END JQUERY
 })(jQuery, void 0);

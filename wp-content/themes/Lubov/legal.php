@@ -16,18 +16,18 @@ get_header();
 
 <div class="legal-page">
 
-  <div class="hero-legal">
-    <div class="hero-legal-inner d-flex flex-column justify-content-end w-100 h-100 position-relative">
-      <div class="breadcrumb-container">
-        <?php echo do_shortcode('[wpseo_breadcrumb]');?>
-      </div>
-      <h1><?php echo get_the_title(); ?></h1>
+<section class="hero hero-legal bg-green ">
+  <div class="hero-inner d-flex align-items-end content-bounds">
+    <div class="hero-content ">
+        <div class="hero-title">
+          <h1><?php echo get_the_title(); ?></h1>
+        </div>
     </div>
-   
   </div>
+</section>
 
-  <div id="primary" class="content-area main-page">
-    <div class="legal-page-inner d-flex flex-column align-items-start m-auto">
+  <div id="primary" class="content-area main-page content-bounds ">
+    <div class="legal-page-inner d-flex flex-column align-items-start  pt-5 pb-5 legal-bounds">
     <?php the_content(); ?>
     </div>
   </div><!-- #primary -->

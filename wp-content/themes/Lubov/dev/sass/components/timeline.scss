@@ -1,0 +1,13 @@
+.timeline-rows {
+    .timeline-rows-inner {
+        .timeline-row {
+            &:nth-child(odd) {
+                align-self: flex-start;
+            }
+            &:nth-child(even) {
+                align-self: flex-end;
+            }
+        }
+    }
+   
+}

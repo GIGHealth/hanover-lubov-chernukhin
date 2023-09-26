@@ -1,28 +1,36 @@
-<div id="content-rows" class="content-rows">
+<?php
+  if( have_rows('content_blocks') ):
+?>
 
-  <?php
-      // are there any rows within within our flexible content?
-      if( have_rows('content_rows') ): 
+<div id="content-rows" class="content-rows">
+  <?php while( have_rows('content_blocks') ): the_row(); 
+    $block_id = get_sub_field('block_id');
+    $bg = get_sub_field('background_color');
+  ?>
+  <div class="content-block<?php if($bg):?> bg-<?php echo $bg; endif; ?> pt-5 pb-5"
+    <?php if($block_id):?>id="<?php echo $block_id; ?>" <?php endif; ?>>
+    <?php if( have_rows('content_rows') ): 
         // loop through all the rows of flexible content
         while ( have_rows('content_rows') ) : the_row();
 
-        // if( get_row_layout() == 'body_copy' )
-        //   get_template_part('components/content-rows/body_copy');
+        if( get_row_layout() == 'double_column' )
+          get_template_part('components/content-rows/double_column');
+          wp_enqueue_script('owl');
+          wp_enqueue_style('owl-style');
+          wp_enqueue_style('owl-theme');
 
-        // if( get_row_layout() == 'image' )
-        //   get_template_part('components/content-rows/image');
+        if( get_row_layout() == 'timeline' )
+        get_template_part('components/content-rows/timeline');
 
-        
-          // wp_enqueue_script('gsap');
-          // wp_enqueue_script('scrollTrigger');
-          // wp_enqueue_script('ScrollTo');
+        if( get_row_layout() == 'case_study' )
+        get_template_part('components/content-rows/case_study');
 
-
-          // wp_enqueue_script('waypoints'); // Enqueue it!
+        if( get_row_layout() == 'links' )
+        get_template_part('components/content-rows/links');
 
         endwhile; // close the loop of flexible content
-      endif; // close flexible content conditional
-
-      ?>
-
+        endif; // close flexible content conditional ?>
+  </div>
+  <?php endwhile; ?>
 </div>
+<?php endif; ?>

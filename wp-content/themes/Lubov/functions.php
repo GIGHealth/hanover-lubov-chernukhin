@@ -32,11 +32,11 @@ if ( function_exists( 'add_theme_support' ) ) {
 
     // Add Thumbnail Theme Support.
     add_theme_support( 'post-thumbnails' );
-    add_image_size( 'post-thumbnail', 300, 300, true ); // Post Thumbnail.
-    add_image_size( 'video-thumbnail', 640, 360, true ); // Post Thumbnail.
+    // add_image_size( 'post-thumbnail', 300, 300, true ); // Post Thumbnail.
+    // add_image_size( 'video-thumbnail', 640, 360, true ); // Post Thumbnail.
     // add_image_size( 'medium-thumb', 571, 285, true ); // Medium Thumbnail.
     // add_image_size( 'small-thumb', 370, 285, true ); // Small Thumbnail.
-    add_image_size( 'hero-banner', 1440, 400, true ); // Custom Thumbnail Size call using the_post_thumbnail('custom-size');
+    // add_image_size( 'hero-banner', 1440, 400, true ); // Custom Thumbnail Size call using the_post_thumbnail('custom-size');
 
     // Add Support for Custom Backgrounds - Uncomment below if you're going to use.
     /*add_theme_support('custom-background', array(
@@ -145,101 +145,6 @@ function top_nav() {
     );
 }
 
-function footer_nav_one() {
-    wp_nav_menu(
-    array(
-        'theme_location'  => 'footer-nav-one',
-        'menu'            => '',
-        'container'       => 'div',
-        'container_class' => 'menu-{menu slug}-container',
-        'container_id'    => '',
-        'menu_class'      => 'menu',
-        'menu_id'         => '',
-        'echo'            => true,
-        'fallback_cb'     => 'wp_page_menu',
-        'before'          => '',
-        'after'           => '',
-        'link_before'     => '',
-        'link_after'      => '',
-        'items_wrap'      => '<ul class="footer-nav-one list-unstyled d-flex flex-column align-items-start text-right justify-content-start">%3$s</ul>',
-        'depth'           => 0,
-        'fallback_cb'     => 'WP_Bootstrap_Navwalker::fallback',
-        'walker'          => new WP_Bootstrap_Navwalker(),
-        )
-    );
-}
-
-function footer_nav_two() {
-    wp_nav_menu(
-    array(
-        'theme_location'  => 'footer-nav-two',
-        'menu'            => '',
-        'container'       => 'div',
-        'container_class' => 'menu-{menu slug}-container',
-        'container_id'    => '',
-        'menu_class'      => 'menu',
-        'menu_id'         => '',
-        'echo'            => true,
-        'fallback_cb'     => 'wp_page_menu',
-        'before'          => '',
-        'after'           => '',
-        'link_before'     => '',
-        'link_after'      => '',
-        'items_wrap'      => '<ul class="footer-nav-two list-unstyled d-flex flex-column align-items-start text-right justify-content-start">%3$s</ul>',
-        'depth'           => 0,
-        'fallback_cb'     => 'WP_Bootstrap_Navwalker::fallback',
-        'walker'          => new WP_Bootstrap_Navwalker(),
-        )
-    );
-}
-
-function footer_nav_three() {
-    wp_nav_menu(
-    array(
-        'theme_location'  => 'footer-nav-three',
-        'menu'            => '',
-        'container'       => 'div',
-        'container_class' => 'menu-{menu slug}-container',
-        'container_id'    => '',
-        'menu_class'      => 'menu',
-        'menu_id'         => '',
-        'echo'            => true,
-        'fallback_cb'     => 'wp_page_menu',
-        'before'          => '',
-        'after'           => '',
-        'link_before'     => '',
-        'link_after'      => '',
-        'items_wrap'      => '<ul class="footer-nav-three list-unstyled d-flex flex-column align-items-start text-right justify-content-start">%3$s</ul>',
-        'depth'           => 0,
-        'fallback_cb'     => 'WP_Bootstrap_Navwalker::fallback',
-        'walker'          => new WP_Bootstrap_Navwalker(),
-        )
-    );
-}
-
-function footer_nav_legal() {
-    wp_nav_menu(
-    array(
-        'theme_location'  => 'footer-nav-legal',
-        'menu'            => '',
-        'container'       => 'div',
-        'container_class' => 'menu-{menu slug}-container',
-        'container_id'    => '',
-        'menu_class'      => 'menu',
-        'menu_id'         => '',
-        'echo'            => true,
-        'fallback_cb'     => 'wp_page_menu',
-        'before'          => '',
-        'after'           => '',
-        'link_before'     => '',
-        'link_after'      => '',
-        'items_wrap'      => '<ul class="footer-nav-legal list-unstyled d-flex flex-column flex-md-row align-items-start text-right justify-content-start">%3$s</ul>',
-        'depth'           => 0,
-        'fallback_cb'     => 'WP_Bootstrap_Navwalker::fallback',
-        'walker'          => new WP_Bootstrap_Navwalker(),
-        )
-    );
-}
 
 //custom password protect page
 add_action( 'wp_enqueue_scripts', 'my_theme_enqueue_styles' );
@@ -353,12 +258,8 @@ function html5blank_header_scripts() {
 function register_html5_menu() {
     register_nav_menus( array( // Using array to specify more menus if needed
         'header-menu'  => esc_html( 'Header Menu', 'html5blank' ), // Main Navigation
-        'footer-menu-one'  => esc_html( 'Footer Menu One', 'html5blank' ), // Main Navigation
-        'footer-menu-two'  => esc_html( 'Footer Menu Two', 'html5blank' ), // Main Navigation
-        'footer-menu-three'  => esc_html( 'Footer Menu Three', 'html5blank' ), // Main Navigation
-        'footer-menu-legal'  => esc_html( 'Footer Menu Legal', 'html5blank' ), // Main Navigation
+        'footer-menu'  => esc_html( 'Footer Menu', 'html5blank' ), // Main Navigation
         'top-nav'  => esc_html( 'Top Menu', 'html5blank' ), // Main Navigation
-
     ) );
 }
 
@@ -872,3 +773,17 @@ include_once( get_stylesheet_directory() .'/modules/icons/logos.php');
 
 
 flush_rewrite_rules( false );
+
+function buttonLink($link_url, $link_target, $link_text){
+    echo '<a href="' . $link_url . '" target="' . $link_target . '" class="button link"><span class="link-text">' . $link_text . '</span><span class="arrow-right"><svg width="15" height="13" viewBox="0 0 15 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M8.62061 0.955078L13.7769 5.87695C13.9233 6.02344 14.0112 6.19922 14.0112 6.4043C14.0112 6.58008 13.9233 6.75586 13.7769 6.90234L8.62061 11.8242C8.35693 12.0879 7.88818 12.0879 7.62451 11.7949C7.36084 11.5312 7.36084 11.0625 7.65381 10.7988L11.5503 7.10742H1.58936C1.1792 7.10742 0.88623 6.78516 0.88623 6.4043C0.88623 5.99414 1.1792 5.70117 1.58936 5.70117H11.5503L7.65381 1.98047C7.36084 1.7168 7.36084 1.24805 7.62451 0.984375C7.88818 0.691406 8.32764 0.691406 8.62061 0.955078Z" fill="#BA4522"/>
+    </svg>
+    </span></a>';
+}
+
+function arrowRight(){
+    echo '<span class="arrow-right"><svg width="15" height="13" viewBox="0 0 15 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M8.62061 0.955078L13.7769 5.87695C13.9233 6.02344 14.0112 6.19922 14.0112 6.4043C14.0112 6.58008 13.9233 6.75586 13.7769 6.90234L8.62061 11.8242C8.35693 12.0879 7.88818 12.0879 7.62451 11.7949C7.36084 11.5312 7.36084 11.0625 7.65381 10.7988L11.5503 7.10742H1.58936C1.1792 7.10742 0.88623 6.78516 0.88623 6.4043C0.88623 5.99414 1.1792 5.70117 1.58936 5.70117H11.5503L7.65381 1.98047C7.36084 1.7168 7.36084 1.24805 7.62451 0.984375C7.88818 0.691406 8.32764 0.691406 8.62061 0.955078Z" fill="#BA4522"/>
+    </svg>
+    </span>';
+}

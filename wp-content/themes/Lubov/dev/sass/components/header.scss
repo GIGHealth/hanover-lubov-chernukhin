@@ -1,0 +1,38 @@
+    header  {
+        background: $green;
+        .header-inner {
+            padding: 25px 0;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            transition: 150ms ease-in-out padding;
+           
+            .nav-logo {
+                padding-left: 1rem;
+            }
+    
+            nav {
+                ul li a, span {
+                    color: $grey;
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+    #menuToggle {
+        position: relative;
+        z-index: 1;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+        display: none;
+        border: none;
+        background: #fff;
+        height: 100%;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 4px;
+        padding: 0 2px 0 18px;
+    }

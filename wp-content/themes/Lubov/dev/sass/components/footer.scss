@@ -1,0 +1,28 @@
+footer {
+    background: white;
+    .footer-inner {
+        padding: 40px 50px;
+        p, ul li a, ul {
+            color: $dark;
+            font-size: 16px;
+            margin: 0;
+        }
+    }
+    #menu-footer-menu {
+        display: flex;
+        list-style-type: none;
+        padding-left: 0;
+        gap: 20px;
+        a {
+            text-decoration: none;
+        }
+    }
+    .copyright {
+        padding-right: 20px;
+    }
+}
+
+
+
+
+

@@ -31,9 +31,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="<?php bloginfo( 'description' ); ?>">
 
-  <link
-    href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap"
-    rel="stylesheet">
+  <link rel="stylesheet" href="https://use.typekit.net/jom6plh.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <?php wp_head(); ?>
 
@@ -70,5 +72,17 @@
   <div class="wrapper">
 
     <!-- header -->
-    Header
+    <header role="banner" class="header show-me">
+        <div class="header-inner site-bounds">
+          <a class="nav-logo" href="<?php echo get_home_url(); ?>"><span class="sr-only">Go Home</span>
+            <?php echo logo();?></a>
+          <nav class="nav" id="mmenuMain"><?php main_nav(); ?></nav>
+          <button id="menuToggle">
+            <div class="sr-only">Open menu</div>
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </header>
     <!-- /header -->
