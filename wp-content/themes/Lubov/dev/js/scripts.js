@@ -64,6 +64,14 @@
         })
       },
     }
+
+    //nav bar scroll
+       //nav bar scroll
+       $( window ).on( "scroll", function() {
+        var $nav = $("header");
+        let $hero = $(".hero")
+        $nav.toggleClass('hero-scrolled', $(this).scrollTop() > $hero.height());
+      });
     //*********************** */
     //** => ELEMENTS
     //*********************** */
@@ -79,6 +87,39 @@
       autoplay: true,
       autoplayHoverPause: true,
       items: 1,
+    })
+
+    //counting graph
+    $(".counter").countUp({
+      time: 2000,
+      delay: 10,
+    })
+
+    //video modal home page
+    $(".video-modal-button").simpleLightbox();
+
+  // Window listeners
+    $(window).resize(function () {
+      check();
+      AOS.refresh();
+    });
+    setTimeout(function () {
+      AOS.refresh();
+    }, 500);
+
+    //AOS animation
+    AOS.init({
+      offset: 200,
+      duration: 500,
+      delay: 250
+    });
+
+    //menu toggle btn 
+    $('#menuToggle').on("click", function() {
+      console.log('click')
+      $(this).toggleClass("active")
+      $('.mobile-menu-container').toggleClass('active')
+      $('body').toggleClass("mobile-menu-active");
     })
   }) //END JQUERY
 })(jQuery, this)

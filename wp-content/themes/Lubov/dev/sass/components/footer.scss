@@ -1,6 +1,6 @@
 footer {
     background: white;
-    .footer-inner {
+    .footer-container-inner {
         padding: 40px 50px;
         p, ul li a, ul {
             color: $dark;
@@ -19,6 +19,12 @@ footer {
     }
     .copyright {
         padding-right: 20px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    footer .footer-container-inner {
+        padding: 40px 20px;
     }
 }
 

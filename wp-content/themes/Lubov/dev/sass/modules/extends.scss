@@ -10,3 +10,24 @@
 //     ),
 //     url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3C!-- Generator: Adobe Illustrator 27.4.1, SVG Export Plug-In . SVG Version: 6.00 Build 0) --%3E%3Csvg version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' width='400px' height='400px' viewBox='0 0 400 400' style='enable-background:new 0 0 400 400;' xml:space='preserve'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence baseFrequency='0.74' numOctaves='3' stitchTiles='stitch' type='fractalNoise'%3E%3C/feTurbulence%3E%3C/filter%3E%3Cg style='opacity:0.2;filter:url(%23noiseFilter);'%3E%3Crect width='400' height='400'/%3E%3C/g%3E%3C/svg%3E%0A");
 // }
+
+%buttonLine {
+    position: relative;
+    &:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: calc(100% - 20px);
+        background: $orange;
+        height: 1px;
+        display: flex;
+        transition: 150ms linear width;
+    }
+    &:hover {
+        &:after {
+            width: 100%;
+            transition: 150ms linear width;
+        }
+    }
+}

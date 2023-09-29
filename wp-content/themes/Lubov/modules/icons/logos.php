@@ -51,5 +51,13 @@ function linkedIn() {
   </span>';
 }
 
+function playBtn() {
+  echo '<span class="play-btn"><svg width="548" height="548" viewBox="0 0 548 548" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="273.817" cy="273.817" r="272.817" stroke="#D9D9D9"/>
+  <path d="M235 206.45L352 274L235 341.55L235 206.45Z" stroke="#D9D9D9"/>
+  </svg>
+  </span>';
+}
+
 
 ?>

@@ -1,6 +1,6 @@
 
 
-<div class="content-row case-studies">
+<div class="content-row case-studies pt-5">
     <div class="small-bounds case-studies-inner d-flex align-items-start justify-content-center">
     <?php
     if( have_rows('case_study_rows') ):

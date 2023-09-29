@@ -3,6 +3,10 @@
     font-size: 24px;
 }
 
+.double-column li {
+  margin-bottom: 15px;
+}
+
 .double-column-inner {
     gap: 50px;
 }
@@ -10,13 +14,16 @@
 .link-container {
     a {
         text-decoration: none;
+        @extend %buttonLine;
+        padding-bottom: 4px;
+
     }
     .link-text {
       color: $orange;
       font-family: $title-font;
       font-size: 25px;
       line-height: 35px;
-      border-bottom: 1px solid $orange;
+      letter-spacing: 1.25px;
     }
     .arrow-right {
         padding-left: 8px;
@@ -24,15 +31,19 @@
 }
 
 .bg-green {
-    .link-text {
-      color: white;
-      font-family: $title-font;
-      font-size: 25px;
-      line-height: 35px;
-      border-bottom: 1px solid white;
-    }
-    .arrow-right {
-        padding-left: 8px;
+    .button.link {
+      @extend %buttonLine;
+      padding-bottom: 4px;
+      .link-text {
+        color: white;
+        font-family: $title-font;
+        font-size: 25px;
+        line-height: 35px;
+        letter-spacing: 1.25px;
+      }
+      .arrow-right {
+          padding-left: 8px;
+      }
     }
 }
 
@@ -45,11 +56,37 @@
   font-family: $title-font;
   font-size: 25px;
   line-height: 35px;
-  border-bottom: 1px solid $orange;
+  // border-bottom: 1px solid $orange;
   cursor: pointer;
   .arrow-right {
     padding-left: 8px;
 }
+}
+
+.slide-link {
+  @extend %buttonLine;
+  svg {
+    transition: all 0.3s ease-in-out;
+  }
+  &:hover {
+    svg {
+      transform: rotate(90deg);
+      transition: all 0.3s ease-in-out;
+    }
+  }
+}
+
+.slide-link-close {
+  @extend %buttonLine;
+  svg {
+    transition: all 0.3s ease-in-out;
+  }
+  &:hover {
+    svg {
+      transform: rotate(-90deg);
+      transition: all 0.3s ease-in-out;
+    }
+  }
 }
 
 

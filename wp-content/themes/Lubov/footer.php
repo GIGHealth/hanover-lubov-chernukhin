@@ -9,7 +9,7 @@ $linkedin = get_field('linkedin', 'option');
     <div class="footer-content">
       <div class="footer-container bottom footer-container-bottom">
         <div class="footer-container-inner content-bounds">
-          <div class="d-flex mt-3 align-items-md-center flex-column-reverse flex-lg-row justify-content-between">
+          <div class="d-flex mt-3 align-items-center flex-row justify-content-between">
            <div class="footer-left d-flex flex-row align-items-center justify-content-center"> <!-- copyright -->
             <p class="copyright">
               &copy; <?php echo $copyright;?>
@@ -37,8 +37,15 @@ $linkedin = get_field('linkedin', 'option');
 </div>
 <!-- /wrapper -->
 
-<?php wp_footer(); ?>
 
+<?php wp_footer(); ?>
+<div class="mobile-menu-container">
+  <div class="site-bounds h-100 d-flex flex-column">
+    <nav class="mobile-nav flex-grow-1 d-flex justify-content-center align-items-center" role="navigation">
+    <?php main_nav(); ?>
+    </nav>
+  </div>
+</div>
 </body>
 
 </html>

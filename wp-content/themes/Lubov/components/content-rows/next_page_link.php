@@ -10,14 +10,18 @@ if($link){
 }
 ?>
 
+<?php if($link): ?>
 <div class="content-row next-page-link bg-dark-creme pt-5 pb-5">
-  <div class="next-page-link-inner content-bounds text-center d-flex flex-column justify-content-center align-items-center pt-3 pb-3">
+  <div class="next-page-link-inner content-bounds text-center d-flex flex-column justify-content-center align-items-center pt-3 pb-3" data-aos="fade-up">
+    <?php if ($title): ?>
     <div class="next-page-link-title"><span><?php echo $title; ?></span></div>
+    <?php endif; ?>
+    <?php if ($copy): ?>
     <div class="next-page-link-copy"><?php echo $copy; ?></div>
-    <?php if($link):?>
+    <?php endif; ?>
       <div class="next-page-link-container">
         <?php echo buttonLink($link_url, $link_target, $link_text); ?>
       </div>
-    <?php endif; ?>
   </div>
 </div>
+<?php endif; ?>

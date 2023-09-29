@@ -159,32 +159,44 @@ function html5blank_header_scripts() {
   if ($GLOBALS['pagenow'] != 'wp-login.php' && !is_admin()) {
 
     wp_register_script('conditionizr', get_template_directory_uri() . '/js/lib/conditionizr-4.3.0.min.js', array(), '4.3.0'); // Conditionizr
-      wp_enqueue_script('conditionizr'); // Enqueue it!
+    wp_enqueue_script('conditionizr'); // Enqueue it!
 
-      wp_register_script('bootstrap-popper', 'https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js', array('jquery')); // Custom scripts
-      wp_enqueue_script('bootstrap-popper'); // Enqueue it!
+    wp_register_script('countUp', get_template_directory_uri() . '/js/lib/jquery.countup.min.js', array( 'jquery' ), false, true );
+    wp_enqueue_script('countUp'); // Enqueue it!
 
-      wp_register_script('bootstrap-script', 'https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js', array('jquery')); // Custom scripts
-      wp_enqueue_script('bootstrap-script'); // Enqueue it!
+    wp_register_script('waypoints', get_template_directory_uri() . '/js/lib/jquery.waypoints.js', array( 'jquery' ), false, true );
+    wp_enqueue_script('waypoints'); // Enqueue it!
+
+    wp_register_script('bootstrap-popper', 'https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js', array('jquery')); // Custom scripts
+    wp_enqueue_script('bootstrap-popper'); // Enqueue it!
+
+    wp_register_script('bootstrap-script', 'https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js', array('jquery')); // Custom scripts
+    wp_enqueue_script('bootstrap-script'); // Enqueue it!
 
 
-      /*------------------------------------*\
-        Owlcarousel
-      \*------------------------------------*/
-      // wp_enqueue_script( 'owl', 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js', array( 'jquery' ), false, true );
-      wp_enqueue_script( 'owl', get_template_directory_uri() . '/js/lib/owl.carousel.min.js', array( 'jquery' ), false, true );
-      // wp_enqueue_style( 'owl-style', get_template_directory_uri() . '/js/lib/owl.carousel.min.css' );
-      // wp_enqueue_style( 'owl-theme', get_template_directory_uri() . '/js/lib/owl.theme.default.min.css' );
 
-      wp_register_script('slb', get_template_directory_uri() . '/js/lib/simpleLightbox.min.js', array('jquery'));
-      wp_enqueue_script('slb'); // Enqueue it!
-      
-      wp_register_script('customScripts', get_template_directory_uri() . '/js/scripts-min.js', array('jquery')); // Custom scripts
-      wp_enqueue_script('customScripts'); // Enqueue it!
 
-      $translation_array = array( 'templateUrl' => get_stylesheet_directory_uri() );
+    /*------------------------------------*\
+    Owlcarousel
+    \*------------------------------------*/
+    // wp_enqueue_script( 'owl', 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js', array( 'jquery' ), false, true );
+    wp_enqueue_script( 'owl', get_template_directory_uri() . '/js/lib/owl.carousel.min.js', array( 'jquery' ), false, true );
+    // wp_enqueue_style( 'owl-style', get_template_directory_uri() . '/js/lib/owl.carousel.min.css' );
+    // wp_enqueue_style( 'owl-theme', get_template_directory_uri() . '/js/lib/owl.theme.default.min.css' );
 
-      wp_localize_script( 'customScripts', 'template_dir', $translation_array );
+    wp_register_script('slb', get_template_directory_uri() . '/js/lib/simpleLightbox.min.js', array('jquery'));
+    wp_enqueue_script('slb'); // Enqueue it!
+
+    wp_register_script('aosJs', get_template_directory_uri() . '/js/lib/aos.min.js', array('jquery')); 
+    wp_enqueue_script('aosJs');
+
+    wp_register_script('customScripts', get_template_directory_uri() . '/js/scripts-min.js', array('jquery')); // Custom scripts
+    wp_enqueue_script('customScripts'); // Enqueue it!
+
+    $translation_array = array( 'templateUrl' => get_stylesheet_directory_uri() );
+
+    wp_localize_script( 'customScripts', 'template_dir', $translation_array );
+
 
       /*------------------------------------*\
         Simple Lightbox
@@ -771,8 +783,37 @@ include_once( get_stylesheet_directory() .'/modules/icons/logos.php');
 // include_once( get_stylesheet_directory() .'/modules/CPTs/investors_content.php');
 
 
+//https://docs.gravityforms.com/gform_submit_button/
+/**
+* Filters the next, previous and submit buttons.
+* Replaces the form's <input> buttons with <button> while maintaining attributes from original <input>.
+*
+* @param string $button Contains the <input> tag to be filtered.
+* @param object $form Contains all the properties of the current form.
+*
+* @return string The filtered button.
+*/
+add_filter( 'gform_next_button', 'input_to_button', 10, 2 );
+add_filter( 'gform_previous_button', 'input_to_button', 10, 2 );
+add_filter( 'gform_submit_button', 'input_to_button', 10, 2 );
+function input_to_button( $button, $form ) {
+     
+    $dom = new DOMDocument();
+    $dom->loadHTML( '<?xml encoding="utf-8" ?>' . $button );
+    $input = $dom->getElementsByTagName( 'input' )->item(0);
+    $new_button = $dom->createElement( 'button' );
+    $new_button->appendChild( $dom->createTextNode( $input->getAttribute( 'value' ) ) );
+    $input->removeAttribute( 'value' );
+    foreach( $input->attributes as $attribute ) {
+        $new_button->setAttribute( $attribute->name, $attribute->value );
+    }
+    $input->parentNode->replaceChild( $new_button, $input );
+ 
+    return $dom->saveHtml( $new_button );
+}
 
-flush_rewrite_rules( false );
+
+
 
 function buttonLink($link_url, $link_target, $link_text){
     echo '<a href="' . $link_url . '" target="' . $link_target . '" class="button link"><span class="link-text">' . $link_text . '</span><span class="arrow-right"><svg width="15" height="13" viewBox="0 0 15 13" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -787,3 +828,5 @@ function arrowRight(){
     </svg>
     </span>';
 }
+
+flush_rewrite_rules( false );

@@ -6,6 +6,8 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            flex-direction: row;
+            gap: 15px;
 
             .hero-image {
                 max-width: 690px;
@@ -26,15 +28,15 @@
 
     .hero-content-bottom {
         background: $creme;
-        padding: 70px 20px;
+        padding: 70px 0;
         .hero-content-bottom-two-col {
             display: flex;
             justify-content: space-between;
             align-items: center;
             .hero-subtitle {
                 p {
-                font-size: 38px;
-                line-height: 50px;
+                font-size: 34px;
+                line-height: 45px;
                 }
             }
             .hero-subtitle, .hero-graph {
@@ -42,14 +44,15 @@
                 display: flex;
                 justify-content: center;
                 flex-direction: column;
+                align-items: center;
             }
 
         }
         .hero-content-bottom-full-width {
             .hero-subtitle-2 {
                 p {
-                    font-size: 38px;
-                    line-height: 50px;
+                    font-size: 34px;
+                    line-height: 45px;
                     }
             }
         }
@@ -61,6 +64,10 @@
         flex-wrap: wrap;
         width: 100%;
         .hero-graph-inner {
+            max-width: 500px;
+            max-height: 500px;
+            height: 500px;
+            width: 500px;
             display: grid;
             grid-template-columns: repeat(2, 1fr);
         }
@@ -93,7 +100,7 @@
             border-top:0.5px solid;
           }
 
-          .number p {
+          .number {
             color: $orange;
             font-size: 74px;
             font-family: $playfair-font;
@@ -108,4 +115,33 @@
           }
     }
 
+//blog hero 
 
+.hero-title {
+    .date-container p {
+        color: $orange;
+        font-size: 22px;
+        line-height: 30px;
+        font-weight: 500;
+        font-family: $manrope-font;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .hero-content-top-inner {
+        padding-top: 25px;
+        gap: 20px;
+        flex-direction: column !important;
+    }
+    .carousel-wrap, .double-column-inner-copy {
+        flex: 1;
+    }
+    .owl-carousel .owl-item img {
+        width: 100%;
+        height: auto;
+    }
+    .play-btn {
+        max-width: 300px;
+        max-height: 300px;
+    }
+}

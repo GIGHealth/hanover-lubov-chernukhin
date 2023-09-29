@@ -1,5 +1,27 @@
     header  {
         background: $green;
+        transition: 150ms linear background;
+        position: fixed;
+        top: 0;
+        left:0;
+        z-index: 50;
+        width: 100%;
+       
+        &.hero-scrolled {
+            background: $creme;
+            transition: 150ms linear background;
+            .header-inner nav span {
+                color: $orange;
+                transition: 150ms linear color;
+                &:hover {
+                    color: $green;
+                    transition: 150ms linear color;
+                }
+            }
+            .logo svg path {
+                fill: $orange;
+            }
+        }
         .header-inner {
             padding: 25px 0;
             display: flex;
@@ -28,11 +50,72 @@
         user-select: none;
         display: none;
         border: none;
-        background: #fff;
+        background: transparent;
         height: 100%;
         align-items: center;
         justify-content: center;
         flex-direction: column;
         gap: 4px;
         padding: 0 2px 0 18px;
+        height: 37px;
+        padding-right: 1rem;
+        span {
+            display: block;
+            width: 33px;
+            height: 4px;
+            position: relative;
+            background: $orange;
+            border-radius: 3px;
+            z-index: 1;
+            transform-origin: 4px 0;
+            transition: transform .5s cubic-bezier(.77,.2,.05,1),background .5s cubic-bezier(.77,.2,.05,1),opacity .55s ease;
+        }
+    }
+
+    body.mobile-menu-active {
+        header {
+            background: $creme;
+            .logo svg path {
+                fill:  $orange;
+            }
+        }
+    }
+
+    .mobile-menu-container {
+        font-family: $playfair-font;
+        opacity: 0;
+        pointer-events: none;
+        background-color: $creme;
+        position: fixed;
+        left: 0;
+        top: 0;
+        z-index: 20;
+        width: 100%;
+        height: 100vh;
+        .main-menu {
+            display: flex;
+            flex-direction: column !important;
+            gap: 36px;
+            li {
+                color: $green;
+                span {
+                    font-size: 30px;
+                }
+            }
+        }
+        &.active {
+            pointer-events: auto !important;
+            opacity: 1 !important;
+            transition: 150ms linear opacity;
+        }
+    }
+
+
+    @media screen and (max-width: 768px) {
+        header nav.nav {
+            display: none;
+        }
+       #menuToggle {
+        display: flex;
+       }
     }

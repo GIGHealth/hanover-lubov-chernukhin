@@ -1,0 +1,207 @@
+body.home {
+    header {
+        background: transparent;
+        transition: 150ms linear background;
+        position: fixed;
+        top: 0;
+        left:0;
+        z-index: 50;
+        width: 100%;
+        .logo svg path {
+            fill: $orange;
+        }
+        &.hero-scrolled {
+            background: $creme;
+            transition: 150ms linear background;
+            .header-inner nav span {
+                color: $orange;
+                transition: 150ms linear color;
+                &:hover {
+                    color: $green;
+                    transition: 150ms linear color;
+                }
+            }
+        }
+       
+    } 
+    .hero-content  {
+        position: relative;
+
+        .hero-video {
+            max-height: 850px;
+            min-height: 850px;
+            video {
+                max-height: 850px;
+                min-height: 850px;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: bottom;
+            }
+        }
+        .play-btn-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            outline: 0;
+            border: 0;
+            background: transparent;
+            .play-btn {
+                position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    margin-right: -50%;
+                    transform: translate(-50%, -50%);
+                    width: 545px;
+                    height: 545px;
+                    svg {
+                        height: 100%;
+                        width: 100%;
+                    }
+            }
+        }
+
+        .hero-title {
+            position: absolute;
+            left: 0; /* position the left edge of the element at the middle of the parent */
+            bottom: 0 ;
+            transform: translate(0, -50%);
+            h1 {
+            text-decoration: underline;
+            text-decoration-color: $orange;
+            text-decoration-thickness: 1px;
+            text-underline-offset: 7px
+            }
+            p {
+                color: $creme;
+                font-family: $playfair-font;
+                font-size: 24px;
+                line-height: 30px;
+            }
+        }
+        
+    }  
+    .front-page {
+        .biography-inner {
+            p {
+                font-family: $manrope-font;
+                font-size: 34px;
+                line-height: 48px;
+            }
+            .biography-title span {
+                font-size: 24px;
+                line-height: 30px;
+                font-family: $playfair-font;
+            }
+        }
+    }
+
+    .double-column-bottom {
+        background: rgb(253,242,237);
+        background: linear-gradient(180deg, rgba(255,255,255,0) 90%, rgba(22,50,22,1) 10% );
+        .double-col-img-container {
+            margin-bottom: -50px;
+        }
+    }
+
+.double-column-inner {
+    .double-col-img-container, .double-col-copy {
+        flex: 1;
+        gap: 20px;
+        p {
+            font-size: 28px;
+            line-height: 39px;
+            font-family: $manrope-font;
+        }
+        
+    }
+
+    .double-col-copy-inner .double-col-title {
+        max-width: 550px;
+        span {
+            font-size: 24px;
+            line-height: 30px;
+            font-family: $playfair-font;
+        }
+    }
+}
+
+.facetwp-container {
+    gap: 10px;
+}
+
+.latest-from-the-blog-title {
+    span {
+        font-size: 24px;
+        line-height: 30px;
+        font-family: $playfair-font;
+        color: white;
+    }
+}
+
+.latest-blog-post-home {
+    .blog-article {
+        gap: 20px;
+        .post-title {
+            flex: 0 0 58%;
+            p {
+                color: $creme;
+                text-decoration: underline;
+                text-decoration-color: white;
+                text-decoration-thickness: 1px;
+                text-underline-offset: 7px;
+                font-family: $manrope-font;
+                font-size: 34px;
+                line-height: 48px;
+                transition: 150ms ease-in-out;
+            }
+        } 
+        a, p {
+            color: $creme;
+        }
+        .post-info {
+            flex: 0 0 38%;
+            p {
+                font-size: 17px;
+                line-height: 23px;
+                font-family: $playfair-font;
+            }
+        }
+        &:hover {
+            .title {
+                text-decoration-color: $orange;
+                transition: 150ms ease-in-out;
+                color: $orange;
+            }
+        }
+    }
+    
+}
+
+}
+body.logged-in header {
+    padding-top: 32px;
+}
+
+
+
+@media screen and (max-width: 991px) {
+    body.home .double-column-bottom {
+        background: white;
+        .double-col-img-container {
+            margin-bottom: 0; 
+        }
+    }
+}
+
+@media screen and (max-width: 782px) {
+    body.logged-in header {
+        padding-top: 46px;
+    }
+    
+}
+
+
+

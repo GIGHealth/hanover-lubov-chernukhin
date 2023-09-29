@@ -1,11 +1,25 @@
 .timeline-rows {
     .timeline-rows-inner {
         .timeline-row {
+            h2 {
+                font-weight: 500;
+            }
+            span {
+                font-size: 24px;
+                line-height: 28px;
+                font-family: $manrope-font;
+            }
             &:nth-child(odd) {
                 align-self: flex-start;
+                .content {
+                    align-items: flex-start;
+                 }
             }
             &:nth-child(even) {
                 align-self: flex-end;
+                .content {
+                   align-items: flex-end;
+                }
             }
         }
     }

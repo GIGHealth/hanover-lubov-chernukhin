@@ -20,9 +20,9 @@
   <link rel="icon" type="image/png" sizes="16x16"
     href="<?php echo get_template_directory_uri(); ?>/img/icons/favicon-16x16.png">
   <link rel="mask-icon" href="<?php echo get_template_directory_uri(); ?>/img/icons/safari-pinned-tab.svg"
-    color="#5bbad5">
-  <meta name="msapplication-TileColor" content="#ffffff">
-  <meta name="theme-color" content="#ffffff">
+  content="#163216">
+  <meta name="msapplication-TileColor" content="#163216">
+  <meta name="theme-color" content="#163216">
 
   <link rel="alternate" type="application/rss+xml" title="<?php bloginfo( 'name' ); ?>"
     href="<?php bloginfo( 'rss2_url' ); ?>" />
@@ -48,9 +48,9 @@
     integrity="sha512-nNatP1G6CEh43irXY/GN4cDcLRX/R0jAYAV/ulFZcotSXcuIQE5Do4TuDOYNAD2SCIpmIbaYSllyjTysSCkpEw=="
     crossorigin="anonymous" referrerpolicy="no-referrer" media="print" onload="this.media='all'" /> -->
 
-  <!-- <link rel='stylesheet' id='simpleLightbox'
+  <link rel='stylesheet' id='simpleLightbox'
     href='<?php echo get_template_directory_uri();?>/js/lib/simpleLightbox.min.css' media="print"
-    onload="this.media='all'" /> -->
+    onload="this.media='all'" />
 
   <link rel='stylesheet' id='owlStyle' href='<?php echo get_template_directory_uri();?>/js/lib/owl.carousel.min.css'
     media="print" onload="this.media='all'" />
@@ -67,7 +67,7 @@
 
 
   <!-- PRELOADS -->
-  
+  <body <?php body_class(); ?>>
   <!-- wrapper -->
   <div class="wrapper">
 

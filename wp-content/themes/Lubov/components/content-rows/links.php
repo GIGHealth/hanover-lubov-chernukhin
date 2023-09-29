@@ -3,7 +3,7 @@ $copy = get_sub_field('copy');
 ?>
 
 <div class="content-row links-rows">
-    <div class="content-bounds d-flex justify-content-center flex-column links-rows-inner">
+    <div class="content-bounds d-flex justify-content-center flex-column links-rows-inner" data-aos="fade-up">
     <?php echo $copy; ?>
     <?php
     if( have_rows('links_rows') ):
@@ -11,8 +11,8 @@ $copy = get_sub_field('copy');
     while( have_rows('links_rows') ) : the_row();
     ?>
     <div
-    class="links-row d-flex">
-    <div class="links d-flex flex-column justify-content-center w-100" data-aos="fade-up">
+    class="links-row d-flex" >
+    <div class="links d-flex flex-column justify-content-center w-100">
         <?php
         if( have_rows('links') ):
             // Loop through rows.

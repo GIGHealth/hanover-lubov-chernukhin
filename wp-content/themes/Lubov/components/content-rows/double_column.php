@@ -17,18 +17,21 @@ if($link){
   $link_text = $link['title'];
 }
 ?>
-<div class="content-row double-column">
-  <div
-    class="pt-3 pb-3 double-column-inner d-flex  <?php if($image_placement):?>flex-md-row-reverse flex-column<?php else: ?>flex-md-row flex-column<?php endif; ?> content-bounds">
-    <div class="d-flex double-column-inner-copy flex-column justify-content-center align-items-center w-100" data-aos="fade-up"
-      <?php if(!$image_placement):?><?php endif; ?> <?php if(!$image_placement):?>data-aos-delay="250" <?php endif; ?>>
-      <div class="content pt-3">
+<div class="content-row double-column" >
+  <div 
+    class="pt-3 pb-3 double-column-inner d-flex  <?php if($image_placement):?>flex-lg-row-reverse flex-column<?php else: ?>flex-lg-row flex-column<?php endif; ?> content-bounds" data-aos="fade-up">
+    <div class="d-flex double-column-inner-copy flex-column justify-content-center align-items-center w-100"
+      <?php if(!$image_placement):?><?php endif; ?> <?php if(!$image_placement):?> <?php endif; ?>>
+      <div class="content<?php if($title): ?> pt-3<?php endif;?>">
+        <?php if($title): ?>
         <h2 class="mb-4"><?php echo $title; ?></h2>
+        <?php endif; ?>
         <?php echo $copy; ?>
         <?php if ($slideCopy): ?>
         <div class="slide-down-content mb-3">
           <span class="slide-link"><?php echo $slideLink; ?><?php arrowRight()?></span>
-         <div class="slide-copy mt-3"> <?php echo $slideCopy; ?> <span class="slide-link-close">Close<?php arrowRight()?></span></div>
+         <div class="slide-copy mt-3"> <?php echo $slideCopy; ?> <span class="slide-link-close">Close<?php arrowRight()?></span>
+        </div>
         </div>
         <?php echo $copy2; ?>
         <?php endif;?>

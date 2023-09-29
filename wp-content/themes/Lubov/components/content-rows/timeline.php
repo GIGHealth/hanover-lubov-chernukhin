@@ -10,9 +10,9 @@
     <div
     class="pt-3 pb-3 timeline-row d-flex">
     <div class="column-text d-flex flex-column justify-content-center w-100" data-aos="fade-up">
-      <div class="content">
-        <h2 class=""><?php echo $companyName; ?></h2>
-        <?php echo $job; ?>
+      <div class="content d-flex flex-column">
+        <h2 class="company-name"><?php echo $companyName; ?></h2>
+        <span class="job-position"><?php echo $job; ?></span>
       </div>
     </div>
   </div>

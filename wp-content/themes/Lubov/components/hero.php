@@ -10,18 +10,18 @@ $toggleGraph = get_field('toggle_graph');
   <div class="hero-inner">
     <div class="hero-content ">
         <div class="hero-content-top">
-            <div class="hero-content-top-inner content-bounds">
+            <div class="hero-content-top-inner content-bounds" data-aos="fade-up">
                 <div class="hero-title">
                     <h1><?php echo $title; ?></h1>
                 </div>
                 <div class="hero-image">
-                    <img src="<?php echo $image;?>" alt="<?php echo $title;?>" />
+                    <img src="<?php echo $image;?>" alt="<?php echo $title;?>" width="<?php echo $img['width']; ?>" height="<?php echo $img['height']; ?>"/>
                 </div>
             </div>
         </div>
         <div class="hero-content-bottom">
             <div class="hero-content-bottom-inner content-bounds">
-                <div class="hero-content-bottom-two-col">
+                <div class="hero-content-bottom-two-col d-flex flex-column flex-lg-row" data-aos="fade-up">
                     <div class="hero-subtitle"><?php echo $subtitle; ?></div>
                     <?php if ($toggleGraph): ?>
                     <div class="hero-graph">
@@ -38,7 +38,7 @@ $toggleGraph = get_field('toggle_graph');
                                 <?php if($prenumcopy):?>
                                 <div class="prenumgraph-copy"><p><?php echo $prenumcopy; ?></p></div>
                                 <?php endif; ?>
-                                <div class="number"><p><?php echo $number; ?></p></div>
+                                <div class="number counter"><?php echo $number; ?></div>
                                 <div class="graph-copy"><p><?php echo $copy; ?></p></div>
                             </div>
                         <?php
@@ -50,7 +50,7 @@ $toggleGraph = get_field('toggle_graph');
                 <?php endif; ?>
                 </div>
                 <?php if($subtitle2) :?>
-                <div class="hero-content-bottom-full-width">
+                <div class="hero-content-bottom-full-width" data-aos="fade-up">
                     <div class="hero-subtitle-2"><?php echo $subtitle2; ?></div>
                 </div>
                 <?php endif;?>

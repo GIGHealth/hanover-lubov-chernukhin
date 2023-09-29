@@ -9,6 +9,12 @@
   line-height: 1.2;
   font-weight: 400;
   font-style: normal;
+  color: $dark;
+  margin: 0;
+}
+html {
+  margin: 0;
+  margin-top: 0;
 }
 header {
   font-family: $playfair-font;
@@ -20,8 +26,15 @@ header {
 
 h1 {
   font-size: 78px;
+  line-height: 78px;
   color: $creme;
   text-transform: uppercase;
+}
+
+.hero-blog {
+  h1 {
+    text-transform: unset;
+  }
 }
 
 h2 {
@@ -36,9 +49,9 @@ p {
   // line-height: 50px;
 }
 
-.content-row {
-  padding-bottom: 65px;
-}
+// .content-row {
+//   padding-bottom: 65px;
+// }
 
 .no-padding-bottom {
   padding-bottom: 0;
@@ -58,20 +71,42 @@ p {
       color: white;
     }
     .link-container { 
+      @extend %buttonLine;
+      padding-bottom: 4px;
       .link-text{
-        border-bottom: 1px solid white;
+        letter-spacing: 1.25px;
+      
       }
       a, span {
         color: white;
       }
     }
-  
+}
 
+.link-container {
+  a {
+      text-decoration: none;
+      @extend %buttonLine;
+      padding-bottom: 4px;
+  }
+  .link-text {
+    color: $orange;
+    font-family: $title-font;
+    font-size: 25px;
+    line-height: 35px;
+    letter-spacing: 1.25px;
+    
+  }
+  .arrow-right {
+      padding-left: 8px;
+     
+  }
 }
 
 .bg-dark-creme {
   background: $darkCreme;
 }
+
 
 .next-page-link p {
   font-size: 28px;
@@ -88,11 +123,6 @@ p {
 
 
 
-// body:not(.logged-in) {
-//   #wpadminbar {
-//     display: none;
-//   }
-// }
 // .text-orange {
 //   color: $orange;
 // }
@@ -192,7 +222,7 @@ source {
   padding: 0 20px;
 }
 
-.legal-bounds {
+.legal-bounds, .blog-bounds, .contact-form-bounds {
   max-width: 820px;
 }
 
@@ -317,5 +347,33 @@ source {
 // hr {
 //   display: none;
 // }
+
+//404 page 
+body.error404 {
+  #primary {
+    height: calc(100vh - 240px);
+    .error-page-inner {
+      gap: 20px;
+      h1 {
+        font-size: 50px;
+        color: $dark;
+        font-family: $title-font;
+      }
+      .return-home-button .return-home {
+        color: $orange;
+        font-family: $title-font;
+        font-size: 25px;
+        line-height: 35px;
+        border-bottom: 1px solid $orange;
+        letter-spacing: 1.25px;
+      }
+      .arrow-right {
+        padding-left: 8px;
+      }
+    }
+
+  }
+}
+
 
 @import "./components/hero";
