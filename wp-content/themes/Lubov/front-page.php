@@ -71,6 +71,7 @@ if($doubleColLink2){
         <div class="hero-title content-bounds">
           <h1 class="mb-5"><?php echo $title; ?></h1>
           <!-- //TODO: wrap in span for class to force H2 fake styling -->
+          <!-- //TODO: Set this text to 4/5ths of the width -->
           <?php echo $subTitle; ?>
         </div>
       </div>
@@ -90,8 +91,8 @@ if($doubleColLink2){
   </section>
   <section class="double-column-top">
     <div class="content-row double-column pt-5 pb-5">
-      <div class="pt-5 double-column-inner d-flex flex-column flex-lg-row justify-content-center align-items-center
-         content-bounds">
+      <div
+        class="pt-5 double-column-inner d-flex flex-column flex-lg-row justify-content-center align-items-center content-bounds">
         <!-- //TODO: data-aos-delay in relation to their text -->
         <div class="double-col-img-container" data-aos="fade-up">
           <img class="double-col-img" src="<?php echo $doubleColImg['url']; ?>"

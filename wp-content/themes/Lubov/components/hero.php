@@ -29,7 +29,7 @@ $toggleGraph = get_field('toggle_graph');
             <div class="hero-subtitle"><?php echo $subtitle; ?></div>
             <?php if ($toggleGraph):
               //TODO: check if enqueue_script will work here for count up
-               ?>
+            ?>
 
             <div class="hero-graph">
               <div class="hero-graph-inner">

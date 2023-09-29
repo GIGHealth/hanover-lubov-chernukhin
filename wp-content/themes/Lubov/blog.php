@@ -37,6 +37,7 @@ if($query->have_posts()):?>
     class="blog-filters content-bounds d-flex flex-column flex-md-row align-items-center align-items-md-start justify-content-center justify-content-md-start pt-5 pb-4">
     <div class="category-container d-flex flex-row align-items-center">
       <!-- //TODO: Move into options acf field -->
+
       <span>Categories:</span>
       <?php echo do_shortcode('[facetwp facet="categories"]');?>
     </div>
@@ -51,6 +52,7 @@ if($query->have_posts()):?>
     </div>
   </div>
   <div class="blog-pagination content-bounds">
+    <!-- //TODO: style load more button -->
     <?php echo do_shortcode('[facetwp facet="load_more"]');?>
   </div>
 </section>
