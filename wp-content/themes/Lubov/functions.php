@@ -162,9 +162,12 @@ function html5blank_header_scripts() {
     wp_enqueue_script('conditionizr'); // Enqueue it!
 
     wp_register_script('countUp', get_template_directory_uri() . '/js/lib/jquery.countup.min.js', array( 'jquery' ), false, true );
+   
+  //  TODO: see if you can move this enqueue to if graph 
     wp_enqueue_script('countUp'); // Enqueue it!
 
     wp_register_script('waypoints', get_template_directory_uri() . '/js/lib/jquery.waypoints.js', array( 'jquery' ), false, true );
+   //  TODO: see if you can move this enqueue to if graph 
     wp_enqueue_script('waypoints'); // Enqueue it!
 
     wp_register_script('bootstrap-popper', 'https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js', array('jquery')); // Custom scripts
@@ -185,6 +188,7 @@ function html5blank_header_scripts() {
     // wp_enqueue_style( 'owl-theme', get_template_directory_uri() . '/js/lib/owl.theme.default.min.css' );
 
     wp_register_script('slb', get_template_directory_uri() . '/js/lib/simpleLightbox.min.js', array('jquery'));
+    //TODO check before final testing if theres only one modal video on the site (homepage), if so move this enqueue to homepage
     wp_enqueue_script('slb'); // Enqueue it!
 
     wp_register_script('aosJs', get_template_directory_uri() . '/js/lib/aos.min.js', array('jquery')); 
@@ -688,37 +692,37 @@ function tagsAsClass($id){
 //** */
 //** => GENERATE IDS FOR ACCORDIONS */
 //** */
-$VALID_ID_CHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-function makeId($desiredLen)
-{
-    global $VALID_ID_CHARS;
-    if ($desiredLen < 1) {
-        throw new \RangeException("Length must be a positive integer");
-    }
-    $vLen = 0;
-    if (function_exists('mb_strlen')) {
-        $vLen = mb_strlen($VALID_ID_CHARS, '8bit') - 1;
-    } else {
-        $vLen = strlen($VALID_ID_CHARS) - 1;
-    }
-    if (function_exists('random_int')) {
-        $pieces = [];
-        for ($i = 0; $i < $desiredLen; ++$i) {
-            $pieces[] = $VALID_ID_CHARS[random_int(0, $vLen)];
-        }
-        return implode('', $pieces);
-    }
-    if (function_exists('openssl_random_pseudo_bytes')) {
-        $random = openssl_random_pseudo_bytes($desiredLen);
-        $id = '';
-        for ($i = 0; $i < $desiredLen; ++$i) {
-            $id .= $VALID_ID_CHARS[ord($random[$i]) % $vLen];
-        }
-        return $id;
-    }
-    http_response_code(500);
-    die('random id generation failed. either random_int or openssl_random_pseudo_bytes is needed');
-}
+// $VALID_ID_CHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+// function makeId($desiredLen)
+// {
+//     global $VALID_ID_CHARS;
+//     if ($desiredLen < 1) {
+//         throw new \RangeException("Length must be a positive integer");
+//     }
+//     $vLen = 0;
+//     if (function_exists('mb_strlen')) {
+//         $vLen = mb_strlen($VALID_ID_CHARS, '8bit') - 1;
+//     } else {
+//         $vLen = strlen($VALID_ID_CHARS) - 1;
+//     }
+//     if (function_exists('random_int')) {
+//         $pieces = [];
+//         for ($i = 0; $i < $desiredLen; ++$i) {
+//             $pieces[] = $VALID_ID_CHARS[random_int(0, $vLen)];
+//         }
+//         return implode('', $pieces);
+//     }
+//     if (function_exists('openssl_random_pseudo_bytes')) {
+//         $random = openssl_random_pseudo_bytes($desiredLen);
+//         $id = '';
+//         for ($i = 0; $i < $desiredLen; ++$i) {
+//             $id .= $VALID_ID_CHARS[ord($random[$i]) % $vLen];
+//         }
+//         return $id;
+//     }
+//     http_response_code(500);
+//     die('random id generation failed. either random_int or openssl_random_pseudo_bytes is needed');
+// }
 
 
 /**
@@ -729,14 +733,14 @@ function makeId($desiredLen)
  * 
  * @return void 
  */
-function cleanString($string){
-  $string = remove_accents($string); // WordPress internal function
-  $string = strtolower($string); // convert to lower case
-  $string = str_replace(' ', '-', $string); // Replaces all spaces with hyphens.
-  $string = preg_replace('/[^A-Za-z0-9\-]/', '', $string); // Removes special chars.
+// function cleanString($string){
+//   $string = remove_accents($string); // WordPress internal function
+//   $string = strtolower($string); // convert to lower case
+//   $string = str_replace(' ', '-', $string); // Replaces all spaces with hyphens.
+//   $string = preg_replace('/[^A-Za-z0-9\-]/', '', $string); // Removes special chars.
 
-  return preg_replace('/-+/', '-', $string); // Replaces multiple hyphens with single one.
-}
+//   return preg_replace('/-+/', '-', $string); // Replaces multiple hyphens with single one.
+// }
 
 /**
  * Modifies SEO Yeast breadcrumbs links through wpseo_breadcrumb_single_link filter
@@ -744,15 +748,15 @@ function cleanString($string){
  * @see https://stackoverflow.com/questions/42178688/how-to-add-a-class-to-the-a-tag-in-yoast-seo-breadcrumbs
  *
  */
-add_filter('wpseo_breadcrumb_single_link', 'ss_breadcrumb_single_link', 10, 2);
-function ss_breadcrumb_single_link($link_output, $link){
-  $classText = cleanString($link['text']);
-  return str_replace('<a', '<a class="breadcrumbs-' . $classText . '"', $link_output);
-}
+// add_filter('wpseo_breadcrumb_single_link', 'ss_breadcrumb_single_link', 10, 2);
+// function ss_breadcrumb_single_link($link_output, $link){
+//   $classText = cleanString($link['text']);
+//   return str_replace('<a', '<a class="breadcrumbs-' . $classText . '"', $link_output);
+// }
 
 
 //** THE MOBILE MENU */
-include_once( get_stylesheet_directory() .'/modules/slide-menu.php');
+// include_once( get_stylesheet_directory() .'/modules/slide-menu.php');
 
 //Template in footer for admins
 // function show_template() {
@@ -800,33 +804,40 @@ function input_to_button( $button, $form ) {
      
     $dom = new DOMDocument();
     $dom->loadHTML( '<?xml encoding="utf-8" ?>' . $button );
-    $input = $dom->getElementsByTagName( 'input' )->item(0);
-    $new_button = $dom->createElement( 'button' );
-    $new_button->appendChild( $dom->createTextNode( $input->getAttribute( 'value' ) ) );
-    $input->removeAttribute( 'value' );
-    foreach( $input->attributes as $attribute ) {
-        $new_button->setAttribute( $attribute->name, $attribute->value );
-    }
-    $input->parentNode->replaceChild( $new_button, $input );
- 
-    return $dom->saveHtml( $new_button );
+$input = $dom->getElementsByTagName( 'input' )->item(0);
+$new_button = $dom->createElement( 'button' );
+$new_button->appendChild( $dom->createTextNode( $input->getAttribute( 'value' ) ) );
+$input->removeAttribute( 'value' );
+foreach( $input->attributes as $attribute ) {
+$new_button->setAttribute( $attribute->name, $attribute->value );
+}
+$input->parentNode->replaceChild( $new_button, $input );
+
+return $dom->saveHtml( $new_button );
 }
 
 
 
 
 function buttonLink($link_url, $link_target, $link_text){
-    echo '<a href="' . $link_url . '" target="' . $link_target . '" class="button link"><span class="link-text">' . $link_text . '</span><span class="arrow-right"><svg width="15" height="13" viewBox="0 0 15 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M8.62061 0.955078L13.7769 5.87695C13.9233 6.02344 14.0112 6.19922 14.0112 6.4043C14.0112 6.58008 13.9233 6.75586 13.7769 6.90234L8.62061 11.8242C8.35693 12.0879 7.88818 12.0879 7.62451 11.7949C7.36084 11.5312 7.36084 11.0625 7.65381 10.7988L11.5503 7.10742H1.58936C1.1792 7.10742 0.88623 6.78516 0.88623 6.4043C0.88623 5.99414 1.1792 5.70117 1.58936 5.70117H11.5503L7.65381 1.98047C7.36084 1.7168 7.36084 1.24805 7.62451 0.984375C7.88818 0.691406 8.32764 0.691406 8.62061 0.955078Z" fill="#BA4522"/>
+echo '<a href="' . $link_url . '" target="' . $link_target . '" class="button link"><span class="link-text">' .
+    $link_text . '</span><span class="arrow-right"><svg width="15" height="13" viewBox="0 0 15 13" fill="none"
+      xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M8.62061 0.955078L13.7769 5.87695C13.9233 6.02344 14.0112 6.19922 14.0112 6.4043C14.0112 6.58008 13.9233 6.75586 13.7769 6.90234L8.62061 11.8242C8.35693 12.0879 7.88818 12.0879 7.62451 11.7949C7.36084 11.5312 7.36084 11.0625 7.65381 10.7988L11.5503 7.10742H1.58936C1.1792 7.10742 0.88623 6.78516 0.88623 6.4043C0.88623 5.99414 1.1792 5.70117 1.58936 5.70117H11.5503L7.65381 1.98047C7.36084 1.7168 7.36084 1.24805 7.62451 0.984375C7.88818 0.691406 8.32764 0.691406 8.62061 0.955078Z"
+        fill="#BA4522" />
     </svg>
-    </span></a>';
+  </span></a>';
 }
 
 function arrowRight(){
-    echo '<span class="arrow-right"><svg width="15" height="13" viewBox="0 0 15 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M8.62061 0.955078L13.7769 5.87695C13.9233 6.02344 14.0112 6.19922 14.0112 6.4043C14.0112 6.58008 13.9233 6.75586 13.7769 6.90234L8.62061 11.8242C8.35693 12.0879 7.88818 12.0879 7.62451 11.7949C7.36084 11.5312 7.36084 11.0625 7.65381 10.7988L11.5503 7.10742H1.58936C1.1792 7.10742 0.88623 6.78516 0.88623 6.4043C0.88623 5.99414 1.1792 5.70117 1.58936 5.70117H11.5503L7.65381 1.98047C7.36084 1.7168 7.36084 1.24805 7.62451 0.984375C7.88818 0.691406 8.32764 0.691406 8.62061 0.955078Z" fill="#BA4522"/>
-    </svg>
-    </span>';
+echo '<span class="arrow-right"><svg width="15" height="13" viewBox="0 0 15 13" fill="none"
+    xmlns="http://www.w3.org/2000/svg">
+    <path
+      d="M8.62061 0.955078L13.7769 5.87695C13.9233 6.02344 14.0112 6.19922 14.0112 6.4043C14.0112 6.58008 13.9233 6.75586 13.7769 6.90234L8.62061 11.8242C8.35693 12.0879 7.88818 12.0879 7.62451 11.7949C7.36084 11.5312 7.36084 11.0625 7.65381 10.7988L11.5503 7.10742H1.58936C1.1792 7.10742 0.88623 6.78516 0.88623 6.4043C0.88623 5.99414 1.1792 5.70117 1.58936 5.70117H11.5503L7.65381 1.98047C7.36084 1.7168 7.36084 1.24805 7.62451 0.984375C7.88818 0.691406 8.32764 0.691406 8.62061 0.955078Z"
+      fill="#BA4522" />
+  </svg>
+</span>';
 }
 
 flush_rewrite_rules( false );

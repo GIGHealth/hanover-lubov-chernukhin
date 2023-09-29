@@ -17,21 +17,27 @@ if($link){
   $link_text = $link['title'];
 }
 ?>
-<div class="content-row double-column" >
-  <div 
-    class="pt-3 pb-3 double-column-inner d-flex  <?php if($image_placement):?>flex-lg-row-reverse flex-column<?php else: ?>flex-lg-row flex-column<?php endif; ?> content-bounds" data-aos="fade-up">
+<div class="content-row double-column">
+  <div
+    class="pt-3 pb-3 double-column-inner d-flex  <?php if($image_placement):?>flex-lg-row-reverse <?php else: ?>flex-lg-row <?php endif; ?> flex-column content-bounds"
+    data-aos="fade-up">
     <div class="d-flex double-column-inner-copy flex-column justify-content-center align-items-center w-100"
       <?php if(!$image_placement):?><?php endif; ?> <?php if(!$image_placement):?> <?php endif; ?>>
       <div class="content<?php if($title): ?> pt-3<?php endif;?>">
         <?php if($title): ?>
+        <!-- //TODO: Make these H3 -->
         <h2 class="mb-4"><?php echo $title; ?></h2>
         <?php endif; ?>
+        <!-- //TODO: global comment, wrap WYSIWYG fields in something, spans or divs with a class so you can access if -->
+        <!-- //TODO: needed. -->
         <?php echo $copy; ?>
         <?php if ($slideCopy): ?>
+        <!-- //TODO: Nudge the 2 arrows up slightly -->
         <div class="slide-down-content mb-3">
           <span class="slide-link"><?php echo $slideLink; ?><?php arrowRight()?></span>
-         <div class="slide-copy mt-3"> <?php echo $slideCopy; ?> <span class="slide-link-close">Close<?php arrowRight()?></span>
-        </div>
+          <div class="slide-copy mt-3"> <?php echo $slideCopy; ?> <span
+              class="slide-link-close">Close<?php arrowRight()?></span>
+          </div>
         </div>
         <?php echo $copy2; ?>
         <?php endif;?>
@@ -53,17 +59,17 @@ if($link){
         }
     ?>
     <div class="carousel-wrap">
-        <div class="image-container image-carousel-inner double-column w-100 <?php if($count > 1): ?>owl-carousel owl-theme<?php endif; ?>"
-            <?php if($count):?>data-count="<?php echo $count; ?><?php endif;?>">
-            <?php while( have_rows('image') ): the_row(); 
+      <div
+        class="image-container image-carousel-inner double-column w-100 <?php if($count > 1): ?>owl-carousel owl-theme<?php endif; ?>"
+        <?php if($count):?>data-count="<?php echo $count; ?><?php endif;?>">
+        <?php while( have_rows('image') ): the_row(); 
                 $img = get_sub_field('image_item');
                 ?>
-            <img class="image-one" src="<?php echo $img['url']; ?>" alt="<?php echo $img['alt']; ?>"
-                width="<?php echo $img['width']; ?>" height="<?php echo $img['height']; ?>" />
-            <?php endwhile; ?>
-        </div>  
+        <img class="image" src="<?php echo $img['url']; ?>" alt="<?php echo $img['alt']; ?>"
+          width="<?php echo $img['width']; ?>" height="<?php echo $img['height']; ?>" />
+        <?php endwhile; ?>
+      </div>
     </div>
     <?php endif; ?>
   </div>
 </div>
-       

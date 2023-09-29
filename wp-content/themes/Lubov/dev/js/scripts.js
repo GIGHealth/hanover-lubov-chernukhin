@@ -66,27 +66,28 @@
     }
 
     //nav bar scroll
-       //nav bar scroll
-       $( window ).on( "scroll", function() {
-        var $nav = $("header");
-        let $hero = $(".hero")
-        $nav.toggleClass('hero-scrolled', $(this).scrollTop() > $hero.height());
-      });
+    //nav bar scroll
+    $(window).on("scroll", function () {
+      var $nav = $("header")
+      let $hero = $(".hero")
+      $nav.toggleClass("hero-scrolled", $(this).scrollTop() > $hero.height())
+    })
     //*********************** */
     //** => ELEMENTS
     //*********************** */
-    $( ".slide-link, .slide-link-close" ).click(function() {
-      console.log('click')
-      $( ".slide-copy" ).slideToggle( "slow" );
-          var $this = $(this);
-            $this.toggleClass("open");
-    });
-    $('.image-container.owl-carousel').owlCarousel({
+    $(".slide-link, .slide-link-close").click(function () {
+      console.log("click")
+      $(".slide-copy").slideToggle("slow")
+      var $this = $(this)
+      $this.toggleClass("open")
+    })
+    $(".image-container.owl-carousel").owlCarousel({
       loop: true,
       nav: false,
       autoplay: true,
       autoplayHoverPause: true,
       items: 1,
+      //TODO:  grab onInitiaize dots function from compass/egetis etc
     })
 
     //counting graph
@@ -96,30 +97,31 @@
     })
 
     //video modal home page
-    $(".video-modal-button").simpleLightbox();
+    $(".video-modal-button").simpleLightbox()
 
-  // Window listeners
+    // Window listeners
     $(window).resize(function () {
-      check();
-      AOS.refresh();
-    });
+      check()
+      AOS.refresh()
+    })
     setTimeout(function () {
-      AOS.refresh();
-    }, 500);
+      AOS.refresh()
+    }, 500)
 
     //AOS animation
+    //TODO: Increase (maybe 750ish) the duration and leave delay as is
     AOS.init({
       offset: 200,
       duration: 500,
-      delay: 250
-    });
+      delay: 250,
+    })
 
-    //menu toggle btn 
-    $('#menuToggle').on("click", function() {
-      console.log('click')
+    //menu toggle btn
+    $("#menuToggle").on("click", function () {
+      console.log("click")
       $(this).toggleClass("active")
-      $('.mobile-menu-container').toggleClass('active')
-      $('body').toggleClass("mobile-menu-active");
+      $(".mobile-menu-container").toggleClass("active")
+      $("body").toggleClass("mobile-menu-active")
     })
   }) //END JQUERY
 })(jQuery, this)

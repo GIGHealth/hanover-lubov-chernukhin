@@ -9,7 +9,7 @@
  * @version 1.0
  */
 
- //TODO: Full page, just use the_content() instead of ACF, pull in next page block from news page - give me a shout to discuss.
+//  TODO: Full page, just use the_content() instead of ACF, pull in next page block from news page - give me a shout to discuss.
 
 get_header(); 
 
@@ -36,6 +36,7 @@ if($query->have_posts()):?>
   <div
     class="blog-filters content-bounds d-flex flex-column flex-md-row align-items-center align-items-md-start justify-content-center justify-content-md-start pt-5 pb-4">
     <div class="category-container d-flex flex-row align-items-center">
+      <!-- //TODO: Move into options acf field -->
       <span>Categories:</span>
       <?php echo do_shortcode('[facetwp facet="categories"]');?>
     </div>
@@ -43,7 +44,7 @@ if($query->have_posts()):?>
 
   <div class="blog-view-grid content-bounds">
     <div class="facetwp-container">
-    <?php while ( $query->have_posts() ) : $query->the_post();
+      <?php while ( $query->have_posts() ) : $query->the_post();
     set_query_var( 'concat', false );
     get_template_part('components/latest_blog_post') ;?>
       <?php endwhile; ?>
