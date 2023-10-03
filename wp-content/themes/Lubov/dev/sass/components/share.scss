@@ -1,0 +1,36 @@
+.share .a2a_kit  {
+    gap: 5px;
+    span {
+        font-size: 20px;
+        line-height: 26px;
+        font-weight: 400;
+        font-family: $manrope-font;
+        color: $orange;
+    }
+    .a2a_button_linkedin {
+        transition: all 0.3s ease-in-out;
+        margin-bottom: 6px;
+        &:hover {
+            transition: all 0.3s ease-in-out;
+            svg {
+                
+                path {
+                    fill: #163216;
+                }
+            }
+        }
+    }
+    .a2a_button_twitter {
+        transition: all 0.3s ease-in-out;
+        &:hover {
+            transition: all 0.3s ease-in-out;
+            svg {
+                path {
+                    fill: #163216;
+                }
+            }
+        }
+    }
+}
+
+

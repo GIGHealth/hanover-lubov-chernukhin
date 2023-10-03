@@ -2,8 +2,8 @@
 .gform_wrapper.gravity-theme form {
   .gfield_label {
     font-family: $manrope-font;
-    font-size: 22px;
-    line-height: 30px;
+    font-size: 20px;
+    line-height: 28px;
     font-weight: 400;
   }
   .ginput_container {
@@ -21,8 +21,8 @@
   border: none;
   color: $orange;
   font-family: $title-font;
-  font-size: 25px;
-  line-height: 35px;
+  font-size: 23px;
+  line-height: 33px;
   padding: 0;
   background: url('data:image/svg+xml,<svg width="15" height="13" viewBox="0 0 15 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.62061 0.955078L13.7769 5.87695C13.9233 6.02344 14.0112 6.19922 14.0112 6.4043C14.0112 6.58008 13.9233 6.75586 13.7769 6.90234L8.62061 11.8242C8.35693 12.0879 7.88818 12.0879 7.62451 11.7949C7.36084 11.5312 7.36084 11.0625 7.65381 10.7988L11.5503 7.10742H1.58936C1.1792 7.10742 0.88623 6.78516 0.88623 6.4043C0.88623 5.99414 1.1792 5.70117 1.58936 5.70117H11.5503L7.65381 1.98047C7.36084 1.7168 7.36084 1.24805 7.62451 0.984375C7.88818 0.691406 8.32764 0.691406 8.62061 0.955078Z" fill="%23BA4522"/></svg>');
   background-repeat: no-repeat;
@@ -33,4 +33,9 @@
 
 .gform_heading {
   display: none;
+}
+
+.gform_confirmation_message_1 {
+  font-size: 24px;
+  font-family: $manrope-font;
 }

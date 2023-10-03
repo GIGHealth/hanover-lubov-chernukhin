@@ -77,12 +77,14 @@
           <a class="nav-logo" href="<?php echo get_home_url(); ?>"><span class="sr-only">Go Home</span>
             <?php echo logo();?></a>
           <nav class="nav" id="mmenuMain"><?php main_nav(); ?></nav>
-          <button id="menuToggle">
-            <div class="sr-only">Open menu</div>
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
+          <div class="burger-container">
+						<ul class="burger">
+							<li class="one"></li>
+							<li class="two"></li>
+							<li class="three"></li>
+							<li class="four"></li>
+						</ul>
+					</div>
         </div>
       </header>
     <!-- /header -->

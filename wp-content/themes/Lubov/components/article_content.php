@@ -1,9 +1,8 @@
 <?php
         if( have_rows('blog_content_blocks') ):
-          //TODO: rename to article_content
     ?>
 
-<div id="content-rows" class="content-rows">
+<div id="content-rows" class="content-rows content-row-blog d-flex flex-column flex-md-row">
   <?php while( have_rows('blog_content_blocks') ): the_row(); 
       ?>
   <div class="content-block blog-bounds blog-content">
@@ -26,8 +25,12 @@
         endwhile; // close the loop of flexible content
         endif; // close flexible content conditional ?>
   </div>
+  <?php get_template_part('components/share_post');?>
+
   <?php endwhile; ?>
-  <button class="back-to-blog mt-3" onclick="history.back()"><span class="back-button">Back to Blog</span>
-    <?php echo arrowRight()?></button>
+
 </div>
+<button class="back-to-blog mt-3" onclick="history.back()"><span class="back-button">Back to Blog</span>
+    <?php echo arrowRight()?></button>
+
 <?php endif; ?>

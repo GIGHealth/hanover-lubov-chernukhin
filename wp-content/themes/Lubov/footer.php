@@ -9,7 +9,7 @@ $linkedin = get_field('linkedin', 'option');
     <div class="footer-content">
       <div class="footer-container bottom footer-container-bottom">
         <div class="footer-container-inner content-bounds">
-          <div class="d-flex mt-3 align-items-center flex-row justify-content-between">
+          <div class="d-flex align-items-center flex-row justify-content-between">
             <div class="footer-left d-flex flex-row align-items-center justify-content-center">
               <!-- copyright -->
               <p class="copyright">
@@ -38,7 +38,6 @@ $linkedin = get_field('linkedin', 'option');
 </div>
 <!-- /wrapper -->
 
-<!-- //TODO: Footer nav menu rollover and align fonts/spacing  -->
 <?php wp_footer(); ?>
 <div class="mobile-menu-container">
   <div class="site-bounds h-100 d-flex flex-column">

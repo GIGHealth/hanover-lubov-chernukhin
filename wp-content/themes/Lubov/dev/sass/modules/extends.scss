@@ -31,3 +31,24 @@
         }
     }
 }
+
+%buttonLineWhite {
+    position: relative;
+    &:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: calc(100% - 20px);
+        background: white;
+        height: 1px;
+        display: flex;
+        transition: 150ms linear width;
+    }
+    &:hover {
+        &:after {
+            width: 100%;
+            transition: 150ms linear width;
+        }
+    }
+}

@@ -60,23 +60,52 @@
     $(window).on("scroll", function () {
       var $nav = $("header");
       var $hero = $(".hero");
-      $nav.toggleClass('hero-scrolled', $(this).scrollTop() > $hero.height());
+      $nav.toggleClass("hero-scrolled", $(this).scrollTop() > $hero.height());
     });
     //*********************** */
     //** => ELEMENTS
     //*********************** */
-    $(".slide-link, .slide-link-close").click(function () {
-      console.log('click');
+    $(".slide-link-container, .slide-link-close-container").click(function () {
+      console.log("click");
       $(".slide-copy").slideToggle("slow");
       var $this = $(this);
       $this.toggleClass("open");
     });
-    $('.image-container.owl-carousel').owlCarousel({
+    function addDotButtonText() {
+      // loop through each dot element
+      $(".owl-dot").each(function () {
+        // remove old text nodes
+        // $(this).find('.offscreen').remove();
+        // grab its (zero-based) order in the series
+        var idx = $(this).index() + 1;
+        $(this).attr("aria-label", "dot ".concat(idx));
+
+        // append a span to the button containing descriptive text
+        $(this).append('<span class="sr-only offscreen">Go to slide ' + idx + "</span>");
+      });
+
+      // loop through each owl-prev element
+      $(".owl-prev").each(function () {
+        // remove old text nodes
+        $(this).attr("aria-label", "previous");
+        $(this).removeAttr("role");
+      });
+      // loop through each owl-prev element
+      $(".owl-next").each(function () {
+        // remove old text nodes
+        $(this).attr("aria-label", "next");
+        $(this).removeAttr("role");
+      });
+    }
+    $(".image-container.owl-carousel").owlCarousel({
       loop: true,
       nav: false,
       autoplay: true,
       autoplayHoverPause: true,
-      items: 1
+      items: 1,
+      //events
+      onInitialized: addDotButtonText,
+      onResized: addDotButtonText
     });
 
     //counting graph
@@ -90,7 +119,6 @@
 
     // Window listeners
     $(window).resize(function () {
-      check();
       AOS.refresh();
     });
     setTimeout(function () {
@@ -98,18 +126,52 @@
     }, 500);
 
     //AOS animation
+    //TODO: Increase (maybe 750ish) the duration and leave delay as is
     AOS.init({
       offset: 200,
       duration: 500,
       delay: 250
     });
 
-    //menu toggle btn 
-    $('#menuToggle').on("click", function () {
-      console.log('click');
-      $(this).toggleClass("active");
-      $('.mobile-menu-container').toggleClass('active');
-      $('body').toggleClass("mobile-menu-active");
+    //menu toggle btn
+    $(".burger-container").on("click", function () {
+      $(".burger-container ul").toggleClass("active");
+      $("body").toggleClass("active-nav");
+      $(".mobile-menu-container").toggleClass("active-nav");
     });
   }); //END JQUERY
+  //parallax 
+  var parallax = function parallax(elements, direction, amount) {
+    console.log(elements);
+    if ("undefined" !== elements && elements.length > 0) {
+      elements.forEach(function (element) {
+        var y = window.innerHeight - element.getBoundingClientRect().top;
+        if (y > 0) {
+          element.style.transform = "translate3d(0, " + direction + amount * y + "px ,0)";
+        }
+        console.log(element);
+      });
+    }
+  };
+  var parallaxHorizontal = function parallaxHorizontal(elements, direction, amount) {
+    if ("undefined" !== elements && elements.length > 0) {
+      elements.forEach(function (element) {
+        var y = window.innerHeight - element.getBoundingClientRect().top;
+        if (y > 0) {
+          element.style.transform = "translate3d(" + direction + amount * y + "px ,0 ,0)";
+        }
+      });
+    }
+  };
+  var parallaxElements = document.querySelectorAll(".parallax");
+  var parallaxReverse = document.querySelectorAll(".parallax-reverse");
+  var parallaxHorizontalElems = document.querySelectorAll(".parallax-horizontal");
+  parallax(parallaxElements, "-", 0.1);
+  parallax(parallaxReverse, "", 0.15);
+  parallaxHorizontal(parallaxHorizontalElems, "", 0.1);
+  window.onscroll = function () {
+    parallax(parallaxElements, "-", 0.1);
+    parallax(parallaxReverse, "", 0.15);
+    parallaxHorizontal(parallaxHorizontalElems, "", 0.1);
+  };
 })(jQuery, void 0);

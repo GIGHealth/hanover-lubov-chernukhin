@@ -1,5 +1,5 @@
 <div class="content-row case-studies pt-5">
-  <div class="small-bounds case-studies-inner d-flex align-items-start justify-content-center">
+  <div class="small-bounds case-studies-inner d-flex align-items-start justify-content-center flex-column flex-md-row">
     <?php
     if( have_rows('case_study_rows') ):
     // Loop through rows.
@@ -10,7 +10,7 @@
     <div class="p-5 case-study d-flex">
       <div class="pb-3 column-text d-flex flex-column justify-content-top w-100" data-aos="fade-up">
         <div class="content">
-          <h2 class="mb-3"><?php echo $title; ?></h2>
+          <h3 class="mb-3"><?php echo $title; ?></h3>
           <?php echo $copy; ?>
         </div>
       </div>

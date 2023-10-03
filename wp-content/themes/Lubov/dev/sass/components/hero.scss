@@ -2,6 +2,7 @@
     .hero-content-top {
         background: rgb(253,242,237);
         background: linear-gradient(180deg, rgba(22,50,22,1) 70%, rgba(253,242,237,1) 70%);
+        padding-top: 87px;
         .hero-content-top-inner {
             display: flex;
             justify-content: center;
@@ -22,21 +23,26 @@
             .hero-image, .hero-title {
                 flex: 1;
             }
-
         } 
     }
 
     .hero-content-bottom {
         background: $creme;
         padding: 70px 0;
+        .small-bounds {
+            margin-left: 0;
+            padding: 0;
+        }
         .hero-content-bottom-two-col {
             display: flex;
             justify-content: space-between;
             align-items: center;
             .hero-subtitle {
-                p {
-                font-size: 34px;
-                line-height: 45px;
+                h2 {
+                font-size: 32px;
+                line-height: 43px;
+                font-family: $manrope-font;
+                font-weight: 400;
                 }
             }
             .hero-subtitle, .hero-graph {
@@ -50,9 +56,11 @@
         }
         .hero-content-bottom-full-width {
             .hero-subtitle-2 {
-                p {
-                    font-size: 34px;
-                    line-height: 45px;
+                h2 {
+                    font-size: 32px;
+                    line-height: 43px;
+                    font-family: $manrope-font;
+                    font-weight: 400;
                     }
             }
         }
@@ -102,14 +110,14 @@
 
           .number {
             color: $orange;
-            font-size: 74px;
+            font-size: 72px;
             font-family: $playfair-font;
             margin-top: -43px;
             margin-bottom: 0;
           }
           .graph-copy p, .prenumgraph-copy p {
             text-align: center;
-            font-size: 18px;
+            font-size: 16px;
             line-height: 1;
             margin: 0;
           }
@@ -120,10 +128,16 @@
 .hero-title {
     .date-container p {
         color: $orange;
-        font-size: 22px;
-        line-height: 30px;
+        font-size: 20px;
+        line-height: 28px;
         font-weight: 500;
         font-family: $manrope-font;
+    }
+}
+
+@media screen and (max-width: 901px) {
+    .hero-content-top .hero-content-top-inner {
+        gap: 30px !important;
     }
 }
 
@@ -143,5 +157,23 @@
     .play-btn {
         max-width: 300px;
         max-height: 300px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .hero-content-bottom .hero-content-bottom-two-col .hero-subtitle {
+        h2 {
+        font-size: 30px;
+        line-height: 40px;
+        }
+    }
+
+    .hero-content-bottom-full-width {
+        .hero-subtitle-2 {
+        h2 {
+            font-size: 30px;
+            line-height: 40px;
+            }
+        }
     }
 }
