@@ -63,8 +63,41 @@
       $nav.toggleClass("hero-scrolled", $(this).scrollTop() > $hero.height());
     });
     //*********************** */
-    //** => ELEMENTS
+    //** => PARALLAX
     //*********************** */
+    var parallax = function parallax(elements, direction, amount) {
+      if ("undefined" !== elements && elements.length > 0) {
+        elements.forEach(function (element) {
+          var y = window.innerHeight - element.getBoundingClientRect().top;
+          if (y > 0) {
+            element.style.transform = "translate3d(0, " + direction + amount * y + "px ,0)";
+          }
+        });
+      }
+    };
+    var parallaxHorizontal = function parallaxHorizontal(elements, direction, amount) {
+      if ("undefined" !== elements && elements.length > 0) {
+        elements.forEach(function (element) {
+          var y = window.innerHeight - element.getBoundingClientRect().top;
+          if (y > 0) {
+            element.style.transform = "translate3d(" + direction + amount * y + "px ,0 ,0)";
+          }
+        });
+      }
+    };
+    var parallaxElements = document.querySelectorAll(".parallax");
+    var parallaxReverse = document.querySelectorAll(".parallax-reverse");
+    var parallaxHorizontalElems = document.querySelectorAll(".parallax-horizontal");
+    console.log("parallax elems below");
+    console.log(parallaxElements);
+    parallax(parallaxElements, "-", 0.1);
+    parallax(parallaxReverse, "", 0.15);
+    parallaxHorizontal(parallaxHorizontalElems, "", 0.1);
+    window.onscroll = function () {
+      parallax(parallaxElements, "-", 0.1);
+      parallax(parallaxReverse, "", 0.15);
+      parallaxHorizontal(parallaxHorizontalElems, "", 0.1);
+    };
     $(".slide-link-container, .slide-link-close-container").click(function () {
       console.log("click");
       $(".slide-copy").slideToggle("slow");
@@ -140,38 +173,4 @@
       $(".mobile-menu-container").toggleClass("active-nav");
     });
   }); //END JQUERY
-  //parallax 
-  var parallax = function parallax(elements, direction, amount) {
-    console.log(elements);
-    if ("undefined" !== elements && elements.length > 0) {
-      elements.forEach(function (element) {
-        var y = window.innerHeight - element.getBoundingClientRect().top;
-        if (y > 0) {
-          element.style.transform = "translate3d(0, " + direction + amount * y + "px ,0)";
-        }
-        console.log(element);
-      });
-    }
-  };
-  var parallaxHorizontal = function parallaxHorizontal(elements, direction, amount) {
-    if ("undefined" !== elements && elements.length > 0) {
-      elements.forEach(function (element) {
-        var y = window.innerHeight - element.getBoundingClientRect().top;
-        if (y > 0) {
-          element.style.transform = "translate3d(" + direction + amount * y + "px ,0 ,0)";
-        }
-      });
-    }
-  };
-  var parallaxElements = document.querySelectorAll(".parallax");
-  var parallaxReverse = document.querySelectorAll(".parallax-reverse");
-  var parallaxHorizontalElems = document.querySelectorAll(".parallax-horizontal");
-  parallax(parallaxElements, "-", 0.1);
-  parallax(parallaxReverse, "", 0.15);
-  parallaxHorizontal(parallaxHorizontalElems, "", 0.1);
-  window.onscroll = function () {
-    parallax(parallaxElements, "-", 0.1);
-    parallax(parallaxReverse, "", 0.15);
-    parallaxHorizontal(parallaxHorizontalElems, "", 0.1);
-  };
 })(jQuery, void 0);
