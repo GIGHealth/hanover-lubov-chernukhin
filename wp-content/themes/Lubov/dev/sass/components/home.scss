@@ -24,6 +24,10 @@ body.home {
         }
        
     } 
+
+    .hero {
+        padding: 0;
+    }
     .hero-content  {
         position: relative;
 
@@ -38,6 +42,13 @@ body.home {
                 object-fit: cover;
                 object-position: bottom;
             }
+        }
+        .hero-img {
+            max-height: 850px;
+            min-height: 850px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
         }
         .play-btn-container {
             position: absolute;
@@ -67,32 +78,36 @@ body.home {
             position: absolute;
             left: 0; /* position the left edge of the element at the middle of the parent */
             bottom: 0 ;
-            transform: translate(0, -50%);
+            transform: translate(0, -75%);
             h1 {
             text-decoration: underline;
             text-decoration-color: $orange;
             text-decoration-thickness: 1px;
             text-underline-offset: 7px
             }
-            p {
+            h2 {
                 color: $creme;
                 font-family: $playfair-font;
-                font-size: 24px;
-                line-height: 30px;
+                font-size: 22px;
+                line-height: 28px;
             }
         }
         
     }  
     .front-page {
         .biography-inner {
+            &.small-bounds {
+                margin-left: 0;
+                padding: 0;
+            }
             p {
                 font-family: $manrope-font;
-                font-size: 34px;
-                line-height: 48px;
+                font-size: 32px;
+                line-height: 46px;
             }
-            .biography-title span {
-                font-size: 24px;
-                line-height: 30px;
+            .biography-title h3 {
+                font-size: 22px;
+                line-height: 28px;
                 font-family: $playfair-font;
             }
         }
@@ -111,8 +126,8 @@ body.home {
         flex: 1;
         gap: 20px;
         p {
-            font-size: 28px;
-            line-height: 39px;
+            font-size: 26px;
+            line-height: 37px;
             font-family: $manrope-font;
         }
         
@@ -120,9 +135,10 @@ body.home {
 
     .double-col-copy-inner .double-col-title {
         max-width: 550px;
-        span {
-            font-size: 24px;
-            line-height: 30px;
+        margin: 0 auto;
+        h4 {
+            font-size: 22px;
+            line-height: 28px;
             font-family: $playfair-font;
         }
     }
@@ -133,9 +149,9 @@ body.home {
 }
 
 .latest-from-the-blog-title {
-    span {
-        font-size: 24px;
-        line-height: 30px;
+    h4 {
+        font-size: 22px;
+        line-height: 28px;
         font-family: $playfair-font;
         color: white;
     }
@@ -164,8 +180,8 @@ body.home {
         .post-info {
             flex: 0 0 38%;
             p {
-                font-size: 17px;
-                line-height: 23px;
+                font-size: 15px;
+                line-height: 21px;
                 font-family: $playfair-font;
             }
         }
@@ -185,6 +201,29 @@ body.logged-in header {
     padding-top: 32px;
 }
 
+@media screen and (max-width: 901px) {
+    body.home .front-page {
+        .latest-blog-post-home {
+            position: relative;
+            &:after {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background: $orange;
+                width: 20%;
+                height: 1px;
+                transform: translate(200%, 50%);
+    
+            }
+        }
+        .facetwp-container {
+            gap: 50px;
+        }
+    }
+}
+
 
 
 @media screen and (max-width: 991px) {
@@ -200,7 +239,24 @@ body.logged-in header {
     body.logged-in header {
         padding-top: 46px;
     }
-    
+}
+
+@media screen and (max-width: 768px) {
+    body.home .front-page {
+        .biography-inner {
+            p {
+                font-size: 30px;
+                line-height: 44px;
+            }
+        }
+        .double-col-img-container, .double-col-copy {
+            p {
+                font-size: 24px;
+                line-height: 35px;
+            }
+        }
+
+    }
 }
 
 

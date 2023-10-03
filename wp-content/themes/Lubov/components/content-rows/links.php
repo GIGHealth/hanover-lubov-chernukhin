@@ -4,7 +4,11 @@ $copy = get_sub_field('copy');
 
 <div class="content-row links-rows">
     <div class="content-bounds d-flex justify-content-center flex-column links-rows-inner" data-aos="fade-up">
-    <?php echo $copy; ?>
+      <div class="links-copy" data-aos="fade-up" data-aos-delay="100">
+        <?php if ($copy): ?>
+          <?php echo $copy; ?>
+        <?php endif; ?>
+      </div>
     <?php
     if( have_rows('links_rows') ):
     // Loop through rows.
@@ -25,7 +29,7 @@ $copy = get_sub_field('copy');
             }
         ?>
     <?php if($link):?>
-      <div class="link-container">
+      <div class="link-container" data-aos="fade-up" data-aos-delay="200">
         <?php echo buttonLink($link_url, $link_target, $link_text); ?>
       </div>
     <?php endif; 

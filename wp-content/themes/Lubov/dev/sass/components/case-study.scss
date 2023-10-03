@@ -1,23 +1,54 @@
 .case-studies-inner {
-    gap: 77px;
     .case-study {
-        flex: 0 0 50%;
+        flex: 0 0 47%;
         &:nth-child(1) {
             background: $orange;
+            margin-right: 30px;
         }
         &:nth-child(2) {
             background: $languidBlue;
             position: relative;
             margin-top: 120px;
+            margin-left: 30px;
         } 
-        h2 {
+        h3 {
             color: white;
-            font-size: 45px;
+            font-size: 43px;
+            line-height: 54px;
+            font-family: $playfair-font;
+            font-weight: 500;
         }
        
         p  {
             color: white;
-            font-size: 24px;
+            font-size: 22px;
+            line-height: 26px;
+            font-weight: 400;
         }
     }
+}
+
+@media screen and (max-width: 768px) {
+    .case-studies-inner {
+        .case-study {
+            flex: 0 0 100%;
+            &:nth-child(1) {
+                margin-right: 0px;
+            }
+            &:nth-child(2) {
+                margin-left: 0px;
+                margin-top: 10px;
+            } 
+            h3 {
+                font-size: 40px;
+                line-height: 50px;
+            }
+            p  {
+                font-size: 20px;
+                line-height: 24px;
+            }
+    }
+    }
+
+
 }

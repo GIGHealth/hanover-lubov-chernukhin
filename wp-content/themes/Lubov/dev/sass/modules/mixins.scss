@@ -57,13 +57,10 @@
 @mixin link($color, $border, $font) {
     color: $color;
     font-family: $font;
-    font-size: 25px;
-    line-height: 35px;
+    font-size: 23px;
+    line-height: 33px;
     border-bottom: 1px solid $border;
 }
 
-.test {
-    @include link($orange, $orange, $title-font);
-}
 
 //under slide down copy 

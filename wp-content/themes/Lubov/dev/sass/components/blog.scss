@@ -1,3 +1,9 @@
+.hero-blog {
+    .hero-inner {
+        padding-top: 150px;
+    }
+}
+
 .latest-blog-post {
     border-bottom: 1px solid $dark;
 }
@@ -11,7 +17,7 @@
 
 .category-container {
     span {
-        font-size: 30px;
+        font-size: 28px;
         font-family: $manrope-font;
     }
     .facetwp-facet-categories.facetwp-facet {
@@ -25,7 +31,7 @@
         .facetwp-radio {
             background: unset;
             padding-left: 0;
-            font-size: 30px;
+            font-size: 28px;
             font-family: $manrope-font;
             padding-bottom: 2px;
             &.checked {
@@ -48,21 +54,21 @@ a {
     .blog-bottom {
         .blog-title p{
             font-family: $manrope-font;
-            font-size: 32px;
+            font-size: 30px;
             line-height: 44px;
             color: $dark;
             text-decoration: underline;
         }
         .excerpt p {
             font-family: $manrope-font;
-            font-size: 20px;
+            font-size: 18px;
             text-decoration: none;
             color: $dark;
         }
 
         p.date {
             color: $orange;
-            font-size: 22px;
+            font-size: 20px;
             line-height: 30px;
             font-family: $manrope-font;
 
@@ -71,7 +77,7 @@ a {
 }
 
 .blog-content p {
-    font-size: 20px;
+    font-size: 18px;
     line-height: 28px;
     font-family: $manrope-font;
 
@@ -86,12 +92,46 @@ a {
     border: 0;
     background: transparent;
     padding: 0;
+    @extend %buttonLine;
     span.back-button {
         // border-bottom: 1px solid $orange;
         color: $orange;
         padding-right: 8px;
         font-family: $title-font;
-        font-size: 25px;
+        font-size: 23px;
         line-height: 35px;
+        
     }
 }
+.blog-pagination {
+    margin-top: 40px;
+    .facetwp-facet-load_more {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .facetwp-load-more {
+            border: none;
+            color: $orange;
+            font-family: $title-font;
+            font-size: 23px;
+            line-height: 35px;
+            padding: 0;
+            background: url('data:image/svg+xml,<svg width="15" height="13" viewBox="0 0 15 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.62061 0.955078L13.7769 5.87695C13.9233 6.02344 14.0112 6.19922 14.0112 6.4043C14.0112 6.58008 13.9233 6.75586 13.7769 6.90234L8.62061 11.8242C8.35693 12.0879 7.88818 12.0879 7.62451 11.7949C7.36084 11.5312 7.36084 11.0625 7.65381 10.7988L11.5503 7.10742H1.58936C1.1792 7.10742 0.88623 6.78516 0.88623 6.4043C0.88623 5.99414 1.1792 5.70117 1.58936 5.70117H11.5503L7.65381 1.98047C7.36084 1.7168 7.36084 1.24805 7.62451 0.984375C7.88818 0.691406 8.32764 0.691406 8.62061 0.955078Z" fill="%23BA4522"/></svg>');
+            background-repeat: no-repeat;
+            background-position: right;
+            padding-right: 20px;
+            @extend %buttonLine;
+        }
+    }
+}
+
+.content-row-blog {
+    .blog-content {
+        flex: 0 0 65%;
+    }
+    .share {
+        flex: 0 0 35%;
+    }
+}
+
+

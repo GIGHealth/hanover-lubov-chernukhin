@@ -5,12 +5,12 @@
 
   <!-- HERO -->
     <section class="hero hero-blog bg-green ">
-        <div class="hero-inner d-flex align-items-end content-bounds pt-5 pb-3">
+        <div class="hero-inner d-flex align-items-end content-bounds pb-3">
             <div class="hero-content blog-bounds">
                 <div class="hero-title">
                 <h1><?php echo get_the_title(); ?></h1>
                 <div class="date-container pt-0 mt-4">
-                    <p><?php echo get_the_date();?></p>
+                    <p><?php echo get_the_date('j F');?></p>
                 </div>
                 </div>
             </div>
@@ -41,10 +41,11 @@
         <section class="post-top-items">
             <div class="post-top-items-inner content-bounds pt-5 pb-5">
                 <div class="first-up-container">
-                <?php get_template_part('components/blog_post'); ?>
+                <?php get_template_part('components/article_content'); ?>
                 </div>
             </div>
         </section>
+
     </article>
 
     <?php endwhile; endif; ?>
