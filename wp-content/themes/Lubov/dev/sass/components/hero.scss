@@ -140,7 +140,7 @@
     }
 
 //blog hero 
-body.blog {
+body.blog, body.single {
     .hero-title {
         h1 {
             animation-name: fade-in;
@@ -207,3 +207,29 @@ body.blog {
         }
     }
 }
+
+@media screen and (max-width: 575px) {
+    .hero-graph {
+        .hero-graph-inner {
+            height: unset;
+            width: unset;
+            .graph-col {
+                .number {
+                    font-size: 50px;
+                    margin-top: -24px;
+                }
+            }
+        }
+    }
+    .hero-content-bottom {
+        .hero-content-bottom-two-col {
+            .hero-subtitle {
+                h2 {
+                font-size: 24px;
+                line-height: 38px;
+                }
+            }
+        }
+    }
+}
+

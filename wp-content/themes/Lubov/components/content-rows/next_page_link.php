@@ -16,11 +16,11 @@ if($link){
     class="next-page-link-inner content-bounds text-center d-flex flex-column justify-content-center align-items-center pt-3 pb-3"
     data-aos="fade">
     <?php if ($title): ?>
-    <div class="next-page-link-title"><h4><?php echo $title; ?></h4></div>
+    <div class="next-page-link-title mb-3"><h4><?php echo $title; ?></h4></div>
     <?php endif; ?>
     <div class="next-page-link-copy-content">
      <?php if ($copy): ?>
-      <div class="next-page-link-copy"><?php echo $copy; ?></div>
+      <div class="next-page-link-copy mb-4"><?php echo $copy; ?></div>
       <?php endif; ?>
       <?php if($link): ?>
       <div class="next-page-link-container" >

@@ -15,7 +15,7 @@
     <div class="pt-3 pb-3 timeline-row d-flex" <?php if($index % 2 == 0):?>data-aos="fade-left"<?php else: ?>data-aos="fade-right"<?php endif; ?>>
       <div class="column-text d-flex flex-column justify-content-center w-100">
         <div class="content d-flex flex-column">
-          <h2 class="company-name"><?php echo $companyName; ?></h2>
+          <h3 class="company-name"><?php echo $companyName; ?></h3>
           <span class="job-position"><?php echo $job; ?></span>
         </div>
       </div>

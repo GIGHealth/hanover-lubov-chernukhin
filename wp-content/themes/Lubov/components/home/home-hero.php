@@ -13,7 +13,7 @@ $videoEmbedLink = get_field('video_embed_link');
       <div class="hero-content ">
         <?php if($videoMp4 || $videoWebm): ?>
         <div class="hero-video">
-          <video muted preload="metadata">
+          <video muted playsinline width="100%" height="auto">
             <?php if($videoMp4): ?>
             <source src="<?php echo $videoMp4['url']; ?>" type="video/mp4">
             <?php endif; ?>
@@ -30,8 +30,10 @@ $videoEmbedLink = get_field('video_embed_link');
           </div>
         <?php endif; ?>
         <div class="hero-title content-bounds">
-          <h1 class="mb-5"><?php echo $title; ?></h1>
-          <?php echo $subTitle; ?>
+          <div class="hero-title-inner">
+            <h1 class="mb-5"><?php echo $title; ?></h1>
+            <?php echo $subTitle; ?>
+          </div>
         </div>
       </div>
     </div>

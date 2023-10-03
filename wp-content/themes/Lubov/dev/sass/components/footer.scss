@@ -19,6 +19,7 @@ footer {
             text-decoration: none;
         }
     }
+
     .copyright {
         padding-right: 20px;
     }
@@ -27,7 +28,25 @@ footer {
 @media screen and (max-width: 768px) {
     footer .footer-container-inner {
         padding: 40px 20px;
+        #menu-footer-menu {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+
+        }
+        .footer-container-inner-content {
+            gap: 10px;
+            .footer-left {
+                gap: 10px;
+            }
+            .copyright {
+                padding-right: 0;
+            }
+        }
+
     }
+    
 }
 
 

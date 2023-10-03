@@ -22,10 +22,13 @@
             .logo svg path {
                 fill: $orange;
             }
-            .menu-item a {
-                &:hover {
-                    span {
-                        color: $green !important;
+            .menu-item {
+                cursor: pointer;
+                a {
+                    &:hover {
+                        span {
+                            color: $green !important;
+                        }
                     }
                 }
             }

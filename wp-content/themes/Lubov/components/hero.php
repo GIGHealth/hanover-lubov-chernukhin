@@ -28,7 +28,9 @@ $toggleGraph = get_field('toggle_graph');
             <div class="hero-subtitle"><?php echo $subtitle; ?></div>
             <?php if ($toggleGraph):
               //TODO: check if enqueue_script will work here for count up
-            
+              wp_enqueue_script('countUp'); // Enqueue it!
+              wp_enqueue_script('waypoints'); // Enqueue it!
+
             ?>
 
 

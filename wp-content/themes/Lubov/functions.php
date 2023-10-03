@@ -162,12 +162,9 @@ function html5blank_header_scripts() {
     wp_enqueue_script('conditionizr'); // Enqueue it!
 
     wp_register_script('countUp', get_template_directory_uri() . '/js/lib/jquery.countup.min.js', array( 'jquery' ), false, true );
-   
-  //  TODO: see if you can move this enqueue to if graph 
     wp_enqueue_script('countUp'); // Enqueue it!
 
     wp_register_script('waypoints', get_template_directory_uri() . '/js/lib/jquery.waypoints.js', array( 'jquery' ), false, true );
-   //  TODO: see if you can move this enqueue to if graph 
     wp_enqueue_script('waypoints'); // Enqueue it!
 
     wp_register_script('bootstrap-popper', 'https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js', array('jquery')); // Custom scripts

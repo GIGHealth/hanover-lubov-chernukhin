@@ -65,7 +65,7 @@ if($link){
     ?>
     <div class="carousel-wrap position-relative"  data-aos="fade-up" data-aos-delay="100">
       <div
-        class=" image-container image-carousel-inner double-column w-100 <?php if($count > 1): ?>owl-carousel owl-theme<?php endif; ?> parallax-reverse"
+        class=" image-container image-carousel-inner double-column w-100 <?php if($count > 1): ?>owl-carousel owl-theme<?php endif; ?> parallax"
         <?php if($count):?>data-count="<?php echo $count; ?><?php endif;?>">
         <?php while( have_rows('image') ): the_row(); 
           $img = get_sub_field('image_item');

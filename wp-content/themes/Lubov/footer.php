@@ -9,8 +9,8 @@ $linkedin = get_field('linkedin', 'option');
     <div class="footer-content">
       <div class="footer-container bottom footer-container-bottom">
         <div class="footer-container-inner content-bounds">
-          <div class="d-flex align-items-center flex-row justify-content-between">
-            <div class="footer-left d-flex flex-row align-items-center justify-content-center">
+          <div class="footer-container-inner-content d-flex align-items-center flex-column flex-md-row justify-content-between">
+            <div class="footer-left d-flex flex-column flex-md-row align-items-center justify-content-center">
               <!-- copyright -->
               <p class="copyright">
                 &copy; <?php echo $copyright;?>
