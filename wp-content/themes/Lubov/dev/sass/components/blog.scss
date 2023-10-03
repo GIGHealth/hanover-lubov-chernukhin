@@ -14,8 +14,16 @@
     gap: 30px;
 }
 
+article.post {
+    animation-name: fade-in;
+    animation-duration: $duration;
+    animation-delay: $duration * 3.5;
+    animation-fill-mode: forwards;
+}
+
 
 .category-container {
+
     span {
         font-size: 28px;
         font-family: $manrope-font;
@@ -52,7 +60,7 @@
 a {
     text-decoration: none;
     .blog-bottom {
-        .blog-title p{
+        .blog-title h3{
             font-family: $manrope-font;
             font-size: 30px;
             line-height: 44px;

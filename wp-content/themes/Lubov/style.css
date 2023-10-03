@@ -1,3 +1,11 @@
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 .gform_footer #gform_submit_button_1, .blog-pagination .facetwp-facet-load_more .facetwp-load-more, .back-to-blog, .next-page-link .next-page-link-inner .next-page-link-container a, .slide-link-close-container, .slide-link-container, .bg-green .button.link, .link-container a {
   position: relative;
 }
@@ -1487,6 +1495,13 @@ body.active-nav header .logo svg path {
   gap: 30px;
 }
 
+article.post {
+  animation-name: fade-in;
+  animation-duration: 500ms;
+  animation-delay: 1750ms;
+  animation-fill-mode: forwards;
+}
+
 .category-container span {
   font-size: 28px;
   font-family: "Manrope", sans-serif;
@@ -1520,7 +1535,7 @@ body.active-nav header .logo svg path {
 a {
   text-decoration: none;
 }
-a .blog-bottom .blog-title p {
+a .blog-bottom .blog-title h3 {
   font-family: "Manrope", sans-serif;
   font-size: 30px;
   line-height: 44px;

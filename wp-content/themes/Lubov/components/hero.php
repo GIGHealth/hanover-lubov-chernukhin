@@ -10,20 +10,20 @@ $toggleGraph = get_field('toggle_graph');
     <div class="hero-content">
       <div class="hero-content-top">
         <div class="hero-content-top-inner content-bounds">
-          <div class="hero-title" data-aos="fade-up" data-aos-delay="300">
+          <div class="hero-title" style="opacity: 0;">
             <h1><?php echo $title; ?></h1>
           </div>
           <?php if ($image): ?>
-          <div class="hero-image" data-aos="fade-up" data-aos-delay="100">
+          <div class="hero-image" style="opacity: 0;">
             <!-- //TODO: aos delay image -->
-            <img src="<?php echo $image;?>" alt="<?php echo $title;?>" />
+            <img src="<?php echo $image;?>" alt="<?php echo $title;?>" width="690" height="547"/> 
             <?php endif; ?>
           </div>
         </div>
       </div>
       <div class="hero-content-bottom">
-        <div class="hero-content-bottom-inner content-bounds">
-          <div class="hero-content-bottom-two-col d-flex flex-column flex-lg-row <?php if($toggleGraph):?>content-bounds<?php else: ?>small-bounds<?php endif;?>" data-aos="fade-up" data-aos-delay="500">
+        <div class="hero-content-bottom-inner content-bounds" style="opacity: 0;">
+          <div class="hero-content-bottom-two-col d-flex flex-column flex-lg-row <?php if($toggleGraph):?>content-bounds<?php else: ?>small-bounds<?php endif;?>">
             <!-- //TODO: Play with aos-delay'ing this more too -->
             <div class="hero-subtitle"><?php echo $subtitle; ?></div>
             <?php if ($toggleGraph):

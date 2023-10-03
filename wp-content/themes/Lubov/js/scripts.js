@@ -90,14 +90,16 @@
     var parallaxHorizontalElems = document.querySelectorAll(".parallax-horizontal");
     console.log("parallax elems below");
     console.log(parallaxElements);
-    parallax(parallaxElements, "-", 0.1);
-    parallax(parallaxReverse, "", 0.15);
-    parallaxHorizontal(parallaxHorizontalElems, "", 0.1);
-    window.onscroll = function () {
+    if (window.innerWidth > 901) {
       parallax(parallaxElements, "-", 0.1);
       parallax(parallaxReverse, "", 0.15);
       parallaxHorizontal(parallaxHorizontalElems, "", 0.1);
-    };
+      window.onscroll = function () {
+        parallax(parallaxElements, "-", 0.1);
+        parallax(parallaxReverse, "", 0.15);
+        parallaxHorizontal(parallaxHorizontalElems, "", 0.1);
+      };
+    }
     $(".slide-link-container, .slide-link-close-container").click(function () {
       console.log("click");
       $(".slide-copy").slideToggle("slow");
@@ -130,16 +132,18 @@
         $(this).removeAttr("role");
       });
     }
-    $(".image-container.owl-carousel").owlCarousel({
-      loop: true,
-      nav: false,
-      autoplay: true,
-      autoplayHoverPause: true,
-      items: 1,
-      //events
-      onInitialized: addDotButtonText,
-      onResized: addDotButtonText
-    });
+    setTimeout(function () {
+      $(".image-container.owl-carousel").owlCarousel({
+        loop: true,
+        nav: false,
+        autoplay: true,
+        autoplayHoverPause: true,
+        items: 1,
+        //events
+        onInitialized: addDotButtonText,
+        onResized: addDotButtonText
+      });
+    }, 500);
 
     //counting graph
     $(".counter").countUp({

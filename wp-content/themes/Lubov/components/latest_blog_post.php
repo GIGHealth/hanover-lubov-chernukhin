@@ -22,14 +22,14 @@ $concat = get_query_var( 'concat' );
 ?>
 
 <article class="latest-blog-post" data-aos="fade-up">
-  <a href="<?php echo $link; ?>" class="latest-blog-post-inner">
+  <a href="<?php echo $link; ?>" class="latest-blog-post-inner" aria-label="Blog post">
     <div class="blog-top">
       <div class="image-container">
       <?php the_post_thumbnail('single-post-thumbnail'); ?>
     </div>
     <div class="blog-bottom">
         <div class="blog-title mt-3">
-            <p class="title"><?php echo $title;?></p>
+            <h3 class="title"><?php echo $title;?></h3>
         </div>
         <?php if(has_excerpt()):?><div class="excerpt"><p><?php echo get_the_excerpt(); ?></p></div><?php endif; ?>
       <div class="post-info">

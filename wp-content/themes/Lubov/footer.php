@@ -41,7 +41,7 @@ $linkedin = get_field('linkedin', 'option');
 <?php wp_footer(); ?>
 <div class="mobile-menu-container">
   <div class="site-bounds h-100 d-flex flex-column">
-    <nav class="mobile-nav flex-grow-1 d-flex justify-content-center align-items-center" role="navigation">
+    <nav class="mobile-nav flex-grow-1 d-flex justify-content-center align-items-center" role="navigation" aria-label="navigation">
       <?php main_nav(); ?>
     </nav>
   </div>

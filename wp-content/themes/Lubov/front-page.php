@@ -15,7 +15,7 @@
 
 get_header(); ?>
 
-<div id="primary" class="content-area front-page">
+<div id="primary" class="content-area front-page" role="main">
   <?php get_template_part('components/home/home-hero'); ?>
   <?php get_template_part('components/home/biography'); ?>
   <?php get_template_part('components/home/double_column_home'); ?>

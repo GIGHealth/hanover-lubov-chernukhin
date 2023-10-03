@@ -23,7 +23,7 @@ $videoEmbedLink = get_field('video_embed_link');
             Your browser does not support the video tag.
           </video>
           <a href="<?php echo $videoEmbedLink; ?>"
-          class="play-btn-container video-modal-button"><?php echo playBtn(); ?></a>
+          class="play-btn-container video-modal-button" aria-label="Video play button - opens modal"><?php echo playBtn(); ?></a>
         </div>
         <?php else: ?>
           <div class="hero-img" style="background-image:url(<?php echo $heroImg['url'] ?>)">

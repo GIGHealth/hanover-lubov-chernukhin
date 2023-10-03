@@ -31,12 +31,12 @@ if($link){
         <?php endif; ?>
         <?php if ($slideCopy): ?>
         <div class="slide-down-content mb-3">
-          <a class="slide-link-container">
+          <a class="slide-link-container" aria-label="Read more" href="javascript:void(0)">
             <span class="slide-link"><?php echo $slideLink; ?></span>
             <?php arrowRight()?>
             <div class="slide-copy mt-3"> <?php echo $slideCopy; ?>
           </a> 
-          <a class="slide-link-close-container">
+          <a class="slide-link-close-container" aria-label="Close read more section" href="javascript:void(0)">
             <span class="slide-link-close">Close</span>
             <?php arrowRight()?>
           </a>
@@ -63,14 +63,14 @@ if($link){
         $count = 1;
         }
     ?>
-    <div class="carousel-wrap"  data-aos="fade-up" data-aos-delay="100">
+    <div class="carousel-wrap position-relative"  data-aos="fade-up" data-aos-delay="100">
       <div
-        class=" image-container image-carousel-inner double-column w-100 <?php if($count > 1): ?>owl-carousel owl-theme<?php endif; ?>"
+        class=" image-container image-carousel-inner double-column w-100 <?php if($count > 1): ?>owl-carousel owl-theme<?php endif; ?> parallax-reverse"
         <?php if($count):?>data-count="<?php echo $count; ?><?php endif;?>">
         <?php while( have_rows('image') ): the_row(); 
           $img = get_sub_field('image_item');
           ?>
-        <img class="image parallax" src="<?php echo $img['url']; ?>" alt="<?php echo $img['alt']; ?>"
+        <img class="image" src="<?php echo $img['url']; ?>" alt="<?php echo $img['alt']; ?>"
           width="<?php echo $img['width']; ?>" height="<?php echo $img['height']; ?>" />
         <?php endwhile; ?>
       </div>

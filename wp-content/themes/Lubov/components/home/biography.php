@@ -9,7 +9,7 @@ if($bioLink){
 }
 ?>
 
-<section class="biography-section bg-creme pt-5 pb-5">
+<section class="biography-section bg-creme pt-5 pb-5" aria-labelledby="biography section">
     <div class="biography-section-inner content-bounds">
     <div class="biography-inner small-bounds pt-5 pb-5" data-aos="fade-up">
       <div class="biography-title mb-3"><h3><?php echo $bioTitle; ?></h3></div>
