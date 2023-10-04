@@ -6,6 +6,16 @@ $orange: #BA4522;
 $darkCreme: #EDE1DB;
 $languidBlue: #A6BABE;
 
-$title-font: "cormorant-garamond", serif; 
-$playfair-font: "playfair-display", serif;
-$manrope-font: 'Manrope', sans-serif;
+$title-font: "cormorant-garamond", Arial, Helvetica, sans-serif;; 
+$playfair-font: "playfair-display", Arial, Helvetica, sans-serif;;
+$manrope-font: 'Manrope', Arial, Helvetica, sans-serif;;
+
+@keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  $duration: 500ms;

@@ -16,7 +16,7 @@ $copy = get_sub_field('copy');
     ?>
     <div
     class="links-row d-flex" >
-    <div class="links d-flex flex-column justify-content-center w-100">
+    <div class="links d-flex flex-column justify-content-center w-100" data-aos="fade" data-aos-delay="200">
         <?php
         if( have_rows('links') ):
             // Loop through rows.
@@ -29,7 +29,7 @@ $copy = get_sub_field('copy');
             }
         ?>
     <?php if($link):?>
-      <div class="link-container" data-aos="fade-up" data-aos-delay="200">
+      <div class="link-container">
         <?php echo buttonLink($link_url, $link_target, $link_text); ?>
       </div>
     <?php endif; 

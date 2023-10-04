@@ -26,7 +26,7 @@ get_header();
   </div>
 </section>
 
-  <div id="primary" class="content-area main-page content-bounds ">
+  <div id="primary" class="content-area main-page content-bounds " role="main">
     <div class="legal-page-inner d-flex flex-column align-items-start  pt-5 pb-5 legal-bounds">
     <?php the_content(); ?>
     </div>

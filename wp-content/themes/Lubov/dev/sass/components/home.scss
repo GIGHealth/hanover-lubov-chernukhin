@@ -75,22 +75,26 @@ body.home {
         }
 
         .hero-title {
-            position: absolute;
-            left: 0; /* position the left edge of the element at the middle of the parent */
-            bottom: 0 ;
-            transform: translate(0, -75%);
-            h1 {
-            text-decoration: underline;
-            text-decoration-color: $orange;
-            text-decoration-thickness: 1px;
-            text-underline-offset: 7px
+            position: relative;
+            .hero-title-inner {
+                position: absolute;
+                left: 2%; /* position the left edge of the element at the middle of the parent */
+                bottom: 0 ;
+                transform: translate(0, -75%);
+                h1 {
+                text-decoration: underline;
+                text-decoration-color: $orange;
+                text-decoration-thickness: 1px;
+                text-underline-offset: 7px
+                }
+                h2 {
+                    color: $creme;
+                    font-family: $playfair-font;
+                    font-size: 22px;
+                    line-height: 28px;
+                }
             }
-            h2 {
-                color: $creme;
-                font-family: $playfair-font;
-                font-size: 22px;
-                line-height: 28px;
-            }
+            
         }
         
     }  
@@ -255,7 +259,51 @@ body.logged-in header {
                 line-height: 35px;
             }
         }
+        .hero-title {
+            .hero-title-inner {
+                h1 {
+                    font-size: 55px;
+                    line-height: 55px;
+                }
+            }
+        }
+        .latest-blog-post-home .blog-article .post-title p {
+            font-size: 26px;
+            line-height: 40px;
+        }
+    }
+}
 
+@media screen and (max-width: 575px) {
+    body.home .front-page {
+        .biography-inner {
+            p {
+                font-size: 24px;
+                line-height: 38px;
+            }
+        }
+        .facetwp-container {
+            gap: 25px;
+        }
+        .hero-content .hero-title .hero-title-inner {
+            left: 3%;
+        }
+    }
+
+
+}
+
+@media screen and (max-width: 400px) {
+    body.home .front-page {
+        .hero-title {
+            .hero-title-inner {
+                h1 {
+                    font-size: 50px;
+                    line-height: 50px;
+                }
+            }
+        }
+   
     }
 }
 

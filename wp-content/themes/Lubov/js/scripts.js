@@ -9,7 +9,7 @@
   });
   $(function () {
     // DOM ready, take it away
-    // detectBrowser()
+    detectBrowser();
     // Browser detection.
     function detectBrowser() {
       var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor),
@@ -63,8 +63,43 @@
       $nav.toggleClass("hero-scrolled", $(this).scrollTop() > $hero.height());
     });
     //*********************** */
-    //** => ELEMENTS
+    //** => PARALLAX
     //*********************** */
+    var parallax = function parallax(elements, direction, amount) {
+      if ("undefined" !== elements && elements.length > 0) {
+        elements.forEach(function (element) {
+          var y = window.innerHeight - element.getBoundingClientRect().top;
+          if (y > 0) {
+            element.style.transform = "translate3d(0, " + direction + amount * y + "px ,0)";
+          }
+        });
+      }
+    };
+    var parallaxHorizontal = function parallaxHorizontal(elements, direction, amount) {
+      if ("undefined" !== elements && elements.length > 0) {
+        elements.forEach(function (element) {
+          var y = window.innerHeight - element.getBoundingClientRect().top;
+          if (y > 0) {
+            element.style.transform = "translate3d(" + direction + amount * y + "px ,0 ,0)";
+          }
+        });
+      }
+    };
+    var parallaxElements = document.querySelectorAll(".parallax");
+    var parallaxReverse = document.querySelectorAll(".parallax-reverse");
+    var parallaxHorizontalElems = document.querySelectorAll(".parallax-horizontal");
+    console.log("parallax elems below");
+    console.log(parallaxElements);
+    if (window.innerWidth > 901) {
+      parallax(parallaxElements, "-", 0.1);
+      parallax(parallaxReverse, "", 0.15);
+      parallaxHorizontal(parallaxHorizontalElems, "", 0.1);
+      window.onscroll = function () {
+        parallax(parallaxElements, "-", 0.1);
+        parallax(parallaxReverse, "", 0.15);
+        parallaxHorizontal(parallaxHorizontalElems, "", 0.1);
+      };
+    }
     $(".slide-link-container, .slide-link-close-container").click(function () {
       console.log("click");
       $(".slide-copy").slideToggle("slow");
@@ -97,16 +132,18 @@
         $(this).removeAttr("role");
       });
     }
-    $(".image-container.owl-carousel").owlCarousel({
-      loop: true,
-      nav: false,
-      autoplay: true,
-      autoplayHoverPause: true,
-      items: 1,
-      //events
-      onInitialized: addDotButtonText,
-      onResized: addDotButtonText
-    });
+    setTimeout(function () {
+      $(".image-container.owl-carousel").owlCarousel({
+        loop: true,
+        nav: false,
+        autoplay: true,
+        autoplayHoverPause: true,
+        items: 1,
+        //events
+        onInitialized: addDotButtonText,
+        onResized: addDotButtonText
+      });
+    }, 500);
 
     //counting graph
     $(".counter").countUp({
@@ -140,38 +177,4 @@
       $(".mobile-menu-container").toggleClass("active-nav");
     });
   }); //END JQUERY
-  //parallax 
-  var parallax = function parallax(elements, direction, amount) {
-    console.log(elements);
-    if ("undefined" !== elements && elements.length > 0) {
-      elements.forEach(function (element) {
-        var y = window.innerHeight - element.getBoundingClientRect().top;
-        if (y > 0) {
-          element.style.transform = "translate3d(0, " + direction + amount * y + "px ,0)";
-        }
-        console.log(element);
-      });
-    }
-  };
-  var parallaxHorizontal = function parallaxHorizontal(elements, direction, amount) {
-    if ("undefined" !== elements && elements.length > 0) {
-      elements.forEach(function (element) {
-        var y = window.innerHeight - element.getBoundingClientRect().top;
-        if (y > 0) {
-          element.style.transform = "translate3d(" + direction + amount * y + "px ,0 ,0)";
-        }
-      });
-    }
-  };
-  var parallaxElements = document.querySelectorAll(".parallax");
-  var parallaxReverse = document.querySelectorAll(".parallax-reverse");
-  var parallaxHorizontalElems = document.querySelectorAll(".parallax-horizontal");
-  parallax(parallaxElements, "-", 0.1);
-  parallax(parallaxReverse, "", 0.15);
-  parallaxHorizontal(parallaxHorizontalElems, "", 0.1);
-  window.onscroll = function () {
-    parallax(parallaxElements, "-", 0.1);
-    parallax(parallaxReverse, "", 0.15);
-    parallaxHorizontal(parallaxHorizontalElems, "", 0.1);
-  };
 })(jQuery, void 0);

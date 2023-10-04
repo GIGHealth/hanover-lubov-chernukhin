@@ -9,12 +9,21 @@
             align-items: center;
             flex-direction: row;
             gap: 15px;
-
+            .hero-title {
+                    animation-name: fade-in;
+                    animation-duration: $duration;
+                    animation-delay: $duration * 2.5;
+                    animation-fill-mode: forwards;
+                }
             .hero-image {
                 max-width: 690px;
                 max-height: 547px;
                 width: 100%;
                 height: 100%;
+                animation-name: fade-in;
+                animation-duration: $duration;
+                animation-delay: $duration * 1.5;
+                animation-fill-mode: forwards;
                 img {
                     width: 100%;
                     height: auto;
@@ -66,6 +75,13 @@
         }
     }
 
+    .hero-content-bottom-inner {
+        animation-name: fade-in;
+        animation-duration: $duration;
+        animation-delay: $duration * 3.5;
+        animation-fill-mode: forwards;
+    }
+
     .hero-graph {
         display: flex;
         flex-direction: row;
@@ -112,7 +128,7 @@
             color: $orange;
             font-size: 72px;
             font-family: $playfair-font;
-            margin-top: -43px;
+            margin-top: -35px;
             margin-bottom: 0;
           }
           .graph-copy p, .prenumgraph-copy p {
@@ -124,16 +140,30 @@
     }
 
 //blog hero 
-
-.hero-title {
-    .date-container p {
-        color: $orange;
-        font-size: 20px;
-        line-height: 28px;
-        font-weight: 500;
-        font-family: $manrope-font;
+body.blog, body.single {
+    .hero-title {
+        h1 {
+            animation-name: fade-in;
+            animation-duration: $duration;
+            animation-delay: $duration * 1.5;
+            animation-fill-mode: forwards;
+        }
+        .date-container {
+            animation-name: fade-in;
+            animation-duration: $duration;
+            animation-delay: $duration * 2.5;
+            animation-fill-mode: forwards;
+            p {
+                color: $orange;
+                font-size: 20px;
+                line-height: 28px;
+                font-weight: 500;
+                font-family: $manrope-font;
+            }
+        }
     }
 }
+
 
 @media screen and (max-width: 901px) {
     .hero-content-top .hero-content-top-inner {
@@ -177,3 +207,29 @@
         }
     }
 }
+
+@media screen and (max-width: 575px) {
+    .hero-graph {
+        .hero-graph-inner {
+            height: unset;
+            width: unset;
+            .graph-col {
+                .number {
+                    font-size: 50px;
+                    margin-top: -24px;
+                }
+            }
+        }
+    }
+    .hero-content-bottom {
+        .hero-content-bottom-two-col {
+            .hero-subtitle {
+                h2 {
+                font-size: 24px;
+                line-height: 38px;
+                }
+            }
+        }
+    }
+}
+
