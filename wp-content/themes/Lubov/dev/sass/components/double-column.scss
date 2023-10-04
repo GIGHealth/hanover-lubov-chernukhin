@@ -72,6 +72,9 @@
 }
 
 .slide-link-container {
+  background: transparent;
+  outline: none;
+  border: none;
   @extend %buttonLine;
   text-decoration: none;
   padding-bottom: 4px;

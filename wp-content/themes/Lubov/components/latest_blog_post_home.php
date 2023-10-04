@@ -21,7 +21,7 @@ $concat = get_query_var( 'concat' );
 
 ?>
 
-<article class="latest-blog-post-home" data-aos="fade-up" data-aos-delay="150">
+<article class="latest-blog-post-home">
   <a href="<?php echo $link; ?>" class="latest-blog-post-inner">
     <div class="blog-article d-flex flex-column flex-lg-row align-items-start">
         <div class="post-title" >

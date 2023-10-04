@@ -1,7 +1,7 @@
 footer {
     background: white;
     .footer-container-inner {
-        padding: 40px 50px;
+        padding: 40px 20px;
         p, ul li a, ul {
             color: $dark;
             font-size: 16px;
@@ -27,7 +27,6 @@ footer {
 
 @media screen and (max-width: 768px) {
     footer .footer-container-inner {
-        padding: 40px 20px;
         #menu-footer-menu {
             flex-direction: column;
             justify-content: center;

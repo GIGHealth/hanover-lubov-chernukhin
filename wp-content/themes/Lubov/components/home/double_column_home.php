@@ -23,8 +23,8 @@ if($doubleColLink2){
 <section class="double-column-top">
     <div class="content-row double-column pt-5 pb-5">
       <div
-        class="pt-md-5 pt-3 double-column-inner d-flex flex-column flex-lg-row justify-content-center align-items-center content-bounds">
-        <div class="double-col-img-container parallax-reverse" data-aos="fade-up"  data-aos-delay="100">
+        class="pt-md-5 pt-3 double-column-inner d-flex flex-column flex-lg-row justify-content-center align-items-center content-bounds" data-aos="fade-up"  data-aos-delay="100">
+        <div class="double-col-img-container parallax-reverse">
           <img class="double-col-img " src="<?php echo $doubleColImg['url']; ?>"
             alt="<?php echo $doubleColImg['alt']; ?>" width="<?php echo $doubleColImg['width']; ?>"
             height="<?php echo $doubleColImg['height']; ?>">
@@ -48,8 +48,8 @@ if($doubleColLink2){
   <section class="double-column-bottom">
     <div class="content-row double-column pt-5 pb-5">
       <div class="pt-0 pt-md-3 double-column-inner d-flex flex-column flex-lg-row-reverse justify-content-center align-items-center
-         content-bounds">
-        <div class="double-col-img-container parallax" data-aos="fade-up" data-aos-delay="100">
+         content-bounds" data-aos="fade-up" data-aos-delay="100">
+        <div class="double-col-img-container parallax" >
           <img class="double-col-img" src="<?php echo $doubleColImg2['url']; ?>"
             alt="<?php echo $doubleColImg2['alt']; ?>" width="<?php echo $doubleColImg2['width']; ?>"
             height="<?php echo $doubleColImg2['height']; ?>">

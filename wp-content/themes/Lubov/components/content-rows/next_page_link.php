@@ -16,7 +16,7 @@ if($link){
     class="next-page-link-inner content-bounds text-center d-flex flex-column justify-content-center align-items-center pt-3 pb-3"
     data-aos="fade">
     <?php if ($title): ?>
-    <div class="next-page-link-title mb-3"><h4><?php echo $title; ?></h4></div>
+    <div class="next-page-link-title mb-3"><h3 class="next-page-link-title-el"><?php echo $title; ?></h3></div>
     <?php endif; ?>
     <div class="next-page-link-copy-content">
      <?php if ($copy): ?>

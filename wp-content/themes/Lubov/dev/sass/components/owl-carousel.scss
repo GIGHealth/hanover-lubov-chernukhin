@@ -27,10 +27,11 @@
     -webkit-backface-visibility: hidden; 
   }
 
+
   .carousel-wrap {
-    overflow: visible;
+    overflow: visible !important;
     flex: 4;
-    overflow: hidden;
+    width: 40%;
   }
 
   .double-column-inner-copy {
@@ -55,4 +56,8 @@
     .carousel-wrap {
         width: 100%;
       }
+  }
+
+  .owl-stage-outer{
+    overflow: visible;
   }

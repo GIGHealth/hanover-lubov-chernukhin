@@ -4,6 +4,7 @@ $customClasses = get_sub_field('custom_classes');
 $img = get_sub_field('image_item');
 $imgRepeater = get_sub_field('image');
 $image_placement = get_sub_field('image_placement');
+$parallax= get_sub_field('parallax');
 $copy = get_sub_field('copy');
 $copy2 = get_sub_field('copy_2');
 $title = get_sub_field('title');
@@ -16,6 +17,7 @@ if($link){
   $link_target = $link['target'] ? $link['target'] : '_self';
   $link_text = $link['title'];
 }
+
 ?>
 <div class="content-row double-column">
   <div
@@ -65,7 +67,7 @@ if($link){
     ?>
     <div class="carousel-wrap position-relative"  data-aos="fade-up" data-aos-delay="100">
       <div
-        class=" image-container image-carousel-inner double-column w-100 <?php if($count > 1): ?>owl-carousel owl-theme<?php endif; ?> parallax"
+        class="image-container image-carousel-inner double-column w-100 <?php if($count > 1): ?>owl-carousel owl-theme<?php endif; ?> <?php if($count === 1): ?><?php if($parallax):?>parallax<?php else: ?>parallax-reverse<?php endif; ?><?php endif; ?>"
         <?php if($count):?>data-count="<?php echo $count; ?><?php endif;?>">
         <?php while( have_rows('image') ): the_row(); 
           $img = get_sub_field('image_item');

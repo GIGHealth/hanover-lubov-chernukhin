@@ -11,7 +11,7 @@
 
   $(function () {
     // DOM ready, take it away
-    // detectBrowser()
+    detectBrowser()
     // Browser detection.
     function detectBrowser() {
       var isChrome =
