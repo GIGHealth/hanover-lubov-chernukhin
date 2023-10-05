@@ -22,5 +22,4 @@ if($query->have_posts()):?>
       <?php endwhile; ?>
     </div>
   </section>
-
-  <?php endif; ?>
+<?php endif; ?>

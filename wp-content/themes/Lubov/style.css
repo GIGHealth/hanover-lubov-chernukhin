@@ -1235,6 +1235,13 @@ body.is-firefox .graph-col .number {
   font-size: 22px;
   line-height: 30px;
 }
+.double-column p a, .double-column li a {
+  font-size: 22px;
+  line-height: 30px;
+  font-family: "Manrope", Arial, Helvetica, sans-serif;
+  color: #BA4522;
+  text-decoration: underline;
+}
 
 .double-column li {
   margin-bottom: 15px;
@@ -1747,6 +1754,15 @@ form.contact-form#gform_1 .gform_wrapper.gravity-theme input[type=color], .gform
   padding-right: 0 !important;
 }
 
+.gform_wrapper.gravity-theme .gform_fields {
+  width: 55% !important;
+}
+
+@media screen and (max-width: 901px) {
+  .gform_wrapper.gravity-theme .gform_fields {
+    width: 100% !important;
+  }
+}
 body.home header {
   background: transparent;
   transition: 150ms linear background;
@@ -1850,6 +1866,13 @@ body.home .front-page .biography-inner p {
   font-family: "Manrope", Arial, Helvetica, sans-serif;
   font-size: 32px;
   line-height: 46px;
+}
+body.home .front-page .biography-inner p a {
+  font-size: 30px;
+  line-height: 44px;
+  font-family: "Manrope", Arial, Helvetica, sans-serif;
+  color: #BA4522;
+  text-decoration: underline;
 }
 body.home .front-page .biography-inner .biography-title h3 {
   font-size: 22px;

@@ -108,7 +108,15 @@ body.home {
                 font-family: $manrope-font;
                 font-size: 32px;
                 line-height: 46px;
+                a {
+                    font-size: 30px;
+                    line-height: 44px;
+                    font-family: $manrope-font;
+                    color: $orange;
+                    text-decoration: underline;
+                }
             }
+            
             .biography-title h3 {
                 font-size: 22px;
                 line-height: 28px;
