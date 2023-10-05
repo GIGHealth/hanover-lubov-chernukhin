@@ -1,37 +1,31 @@
 footer {
     background: white;
     .footer-container-inner {
-        padding: 30px 20px;
+        padding: 40px 20px;
         p, ul li a, ul {
             color: $dark;
             font-size: 16px;
             line-height: 22px;
             margin: 0;
         }
-        li a {
-            padding: 0.5rem 1rem;
-        }
-        li a:hover {
-            background: $green;
-            color: $creme;
+        li:hover a {
+            color: $orange;
         }
     }
     #menu-footer-menu {
         display: flex;
         list-style-type: none;
         padding-left: 0;
-        font-family: $manrope-font;
+        gap: 20px;
+        font-family: $playfair-font;
         a {
             text-decoration: none;
         }
     }
 
-    .footer-right {
-        padding: 0.5rem 0 0.5rem 1rem;
-    }
-
     .copyright {
-        padding: 0.5rem 1rem 0.5rem 0;
+        padding-right: 20px;
+        font-family: $playfair-font;
     }
 }
 
@@ -42,6 +36,7 @@ footer {
             justify-content: center;
             align-items: center;
             gap: 10px;
+
         }
         .footer-container-inner-content {
             gap: 10px;
