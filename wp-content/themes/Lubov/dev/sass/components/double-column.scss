@@ -2,6 +2,13 @@
     font-family: $manrope-font;
     font-size: 22px;
     line-height: 30px;
+      a {
+        font-size: 22px;
+        line-height: 30px;
+        font-family: $manrope-font;
+        color: $orange;
+        text-decoration: underline;
+    }
 }
 
 .double-column li {
