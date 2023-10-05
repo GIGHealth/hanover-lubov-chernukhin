@@ -231,4 +231,13 @@ body.error404 {
   }
 }
 
+//cookie
+.cky-notice-des *, .cky-preference-content-wrapper *, .cky-accordion-header-des *, .cky-gpc-wrapper .cky-gpc-desc * {
+  line-height: 20px;
+}
+
+.cky-btn-revisit-wrapper {
+  opacity: 0;
+  visibility: hidden
+}
 @import "./components/hero";
