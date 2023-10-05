@@ -8,8 +8,12 @@ footer {
             line-height: 22px;
             margin: 0;
         }
+        li {
+            transition: 150ms linear color;
+        }
         li:hover a {
             color: $orange;
+            transition: 150ms linear color;
         }
     }
     #menu-footer-menu {
@@ -20,6 +24,17 @@ footer {
         font-family: $playfair-font;
         a {
             text-decoration: none;
+        }
+    }
+    .footer-right {
+        .logo:hover {
+            svg {
+                transition: 150ms linear color;
+            }
+            svg path {
+                fill: $orange;
+                transition: 150ms linear color;
+            }
         }
     }
 
