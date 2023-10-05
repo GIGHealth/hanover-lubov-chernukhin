@@ -1,5 +1,6 @@
 .timeline-rows {
     .timeline-rows-inner {
+        overflow-x: hidden;
         .timeline-row {
             h3.company-name {
                 font-weight: 500;
@@ -14,14 +15,35 @@
             }
             &:nth-child(odd) {
                 align-self: flex-start;
+                width: 100%;
                 .content {
                     align-items: flex-start;
+                    width: 100%;
                  }
             }
             &:nth-child(even) {
                 align-self: flex-end;
+                width: 100%;
                 .content {
                    align-items: flex-end;
+                   width: 100%;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 901px) {
+    .timeline-rows {
+        .timeline-rows-inner {
+            .timeline-row {
+                &:nth-child(even) {
+                    align-self: flex-start;
+                    width: 100%;
+                    .content {
+                       align-items: flex-start;
+                       width: 100%;
+                    }
                 }
             }
         }
@@ -32,6 +54,12 @@
     .timeline-rows {
         .timeline-rows-inner {
             .timeline-row {
+                &:nth-child(even) {
+                    align-self: flex-start;
+                    .content {
+                       align-items: flex-start;
+                    }
+                }
                 h3.company-name {
                     font-size: 36px;
                     line-height: 48px;
@@ -40,12 +68,7 @@
                     font-size: 20px;
                     line-height: 22px;
                 }
-                &:nth-child(even) {
-                    align-self: flex-start;
-                    .content {
-                       align-items: flex-start;
-                    }
-                }
+               
             }
         }
 

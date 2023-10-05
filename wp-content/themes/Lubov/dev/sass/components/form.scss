@@ -52,6 +52,11 @@ form.contact-form#gform_1 .gform_wrapper.gravity-theme input[type=color], .gform
   width: 55% !important;
 }
 
+.gform_ajax_spinner {
+	width: 50px;
+  padding: 10px;
+}
+
 @media screen and (max-width: 901px) {
   .gform_wrapper.gravity-theme .gform_fields {
     width: 100% !important;

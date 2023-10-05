@@ -4,7 +4,7 @@ $type = get_post_type();
 $template = get_page_template_slug();
 $useID = $id;
 ?>
-  <div id="primary" class="content-area main-page d-flex justify-content-center align-items-center">
+  <div id="primary" class="content-area main-page d-flex justify-content-center align-items-center" role="main">
     <div class="error-page-inner d-flex flex-column align-items-start m-auto align-items-center content-bounds">
       <h1 class="text-center">Sorry no content is found at this location</h1>
       <h2 class="text-center">404 <br/><span>PAGE NOT FOUND</span></h2>

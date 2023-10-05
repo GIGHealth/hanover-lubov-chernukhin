@@ -46,6 +46,10 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            &.content-bounds {
+                padding-left: 0;
+                padding-right: 0;
+            }
             .hero-subtitle {
                 h2 {
                 font-size: 32px;
@@ -188,6 +192,9 @@ body.blog, body.single {
         max-width: 300px;
         max-height: 300px;
     }
+    .hero-content-bottom-two-col {
+        gap: 25px;
+    }   
 }
 
 @media screen and (max-width: 768px) {

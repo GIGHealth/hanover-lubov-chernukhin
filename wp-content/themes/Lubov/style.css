@@ -1379,6 +1379,9 @@ body.is-firefox .graph-col .number {
   letter-spacing: 1.25px;
 }
 
+.timeline-rows .timeline-rows-inner {
+  overflow-x: hidden;
+}
 .timeline-rows .timeline-rows-inner .timeline-row h3.company-name {
   font-weight: 500;
   font-size: 45px;
@@ -1392,18 +1395,38 @@ body.is-firefox .graph-col .number {
 }
 .timeline-rows .timeline-rows-inner .timeline-row:nth-child(odd) {
   align-self: flex-start;
+  width: 100%;
 }
 .timeline-rows .timeline-rows-inner .timeline-row:nth-child(odd) .content {
   align-items: flex-start;
+  width: 100%;
 }
 .timeline-rows .timeline-rows-inner .timeline-row:nth-child(even) {
   align-self: flex-end;
+  width: 100%;
 }
 .timeline-rows .timeline-rows-inner .timeline-row:nth-child(even) .content {
   align-items: flex-end;
+  width: 100%;
 }
 
+@media screen and (max-width: 901px) {
+  .timeline-rows .timeline-rows-inner .timeline-row:nth-child(even) {
+    align-self: flex-start;
+    width: 100%;
+  }
+  .timeline-rows .timeline-rows-inner .timeline-row:nth-child(even) .content {
+    align-items: flex-start;
+    width: 100%;
+  }
+}
 @media screen and (max-width: 768px) {
+  .timeline-rows .timeline-rows-inner .timeline-row:nth-child(even) {
+    align-self: flex-start;
+  }
+  .timeline-rows .timeline-rows-inner .timeline-row:nth-child(even) .content {
+    align-items: flex-start;
+  }
   .timeline-rows .timeline-rows-inner .timeline-row h3.company-name {
     font-size: 36px;
     line-height: 48px;
@@ -1411,12 +1434,6 @@ body.is-firefox .graph-col .number {
   .timeline-rows .timeline-rows-inner .timeline-row span.job-position {
     font-size: 20px;
     line-height: 22px;
-  }
-  .timeline-rows .timeline-rows-inner .timeline-row:nth-child(even) {
-    align-self: flex-start;
-  }
-  .timeline-rows .timeline-rows-inner .timeline-row:nth-child(even) .content {
-    align-items: flex-start;
   }
 }
 @media screen and (max-width: 575px) {
@@ -1756,6 +1773,11 @@ form.contact-form#gform_1 .gform_wrapper.gravity-theme input[type=color], .gform
 
 .gform_wrapper.gravity-theme .gform_fields {
   width: 55% !important;
+}
+
+.gform_ajax_spinner {
+  width: 50px;
+  padding: 10px;
 }
 
 @media screen and (max-width: 901px) {
