@@ -105,7 +105,7 @@
     )
     console.log("parallax elems below")
     console.log(parallaxElements)
-    if(window.innerWidth > 901) {
+    if(window.innerWidth > 1024) {
       parallax(parallaxElements, "-", 0.1)
       parallax(parallaxReverse, "", 0.15)
       parallaxHorizontal(parallaxHorizontalElems, "", 0.1)
@@ -158,7 +158,7 @@
         loop: true,
         nav: false,
         autoplay: true,
-        autoplayHoverPause: true,
+        autoplayHoverPause: false,
         items: 1,
         //events
         onInitialized: addDotButtonText,

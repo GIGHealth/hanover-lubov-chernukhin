@@ -16,18 +16,20 @@
                     animation-fill-mode: forwards;
                 }
             .hero-image {
-                max-width: 690px;
-                max-height: 547px;
+                // max-width: 690px;
+                // max-height: 547px;
+                // width: 100%;
+                // height: 100%;
                 width: 100%;
-                height: 100%;
                 animation-name: fade-in;
                 animation-duration: $duration;
                 animation-delay: $duration * 1.5;
                 animation-fill-mode: forwards;
-                img {
-                    width: 100%;
-                    height: auto;
-                }
+                @include responsiveImage(33.5%);
+                // img {
+                //     width: 100%;
+                //     height: auto;
+                // }
             }
             .hero-image, .hero-title {
                 flex: 1;
@@ -194,7 +196,22 @@ body.blog, body.single {
     }
     .hero-content-bottom-two-col {
         gap: 25px;
-    }   
+    }  
+    
+    // .hero-image{
+    //     max-width: 500px;
+    //     width: 500px;
+    // }
+
+    .hero-content-top .hero-content-top-inner {
+        gap: 30px;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .hero-content-top .hero-content-top-inner .hero-image {
+        @include responsiveImage(62.5%);
+    }
 }
 
 @media screen and (max-width: 768px) {

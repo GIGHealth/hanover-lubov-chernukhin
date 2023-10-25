@@ -1517,65 +1517,6 @@ body.is-firefox .graph-col .number {
   gap: 10px;
 }
 
-.owl-theme .owl-dots {
-  position: absolute;
-  left: 50%; /* position the left edge of the element at the middle of the parent */
-  bottom: 0;
-  transform: translate(-50%, -50%);
-  display: flex;
-  gap: 10px;
-}
-.owl-theme .owl-dots .owl-dot span {
-  background: #FDF2ED !important;
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  border: 1px solid #FDF2ED !important;
-}
-.owl-theme .owl-dots .owl-dot.active span {
-  border: 1px solid #FDF2ED !important;
-  background: #163216 !important;
-}
-
-/* fix blank or flashing items on carousel */
-.owl-carousel .item {
-  position: relative;
-  z-index: 100;
-  -webkit-backface-visibility: hidden;
-}
-
-.carousel-wrap {
-  overflow: visible !important;
-  flex: 4;
-  width: 40%;
-}
-
-.double-column-inner-copy {
-  flex: 6;
-}
-
-.owl-nav {
-  display: none;
-}
-
-.owl-carousel .owl-stage {
-  display: flex;
-}
-
-.owl-carousel .owl-item img {
-  width: auto;
-  height: 100%;
-}
-
-@media screen and (max-width: 901px) {
-  .carousel-wrap {
-    width: 100%;
-  }
-}
-.owl-stage-outer {
-  overflow: visible;
-}
-
 .hero-legal .hero-inner {
   height: 300px;
 }
@@ -1918,7 +1859,6 @@ body.home .front-page .biography-inner .biography-title h3 {
 }
 body.home .double-column-bottom {
   background: rgb(253, 242, 237);
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 90%, rgb(22, 50, 22) 10%);
 }
 body.home .double-column-bottom .double-col-img-container {
   margin-bottom: -50px;

@@ -71,8 +71,9 @@ if($link){
         <?php if($count):?>data-count="<?php echo $count; ?><?php endif;?>">
         <?php while( have_rows('image') ): the_row(); 
           $img = get_sub_field('image_item');
+
           ?>
-        <img class="image" src="<?php echo $img['url']; ?>" alt="<?php echo $img['alt']; ?>"
+        <img class="image image-position-carousel image-position-<?php echo esc_html ( get_sub_field('image_position') ); ?>" src="<?php echo $img['url']; ?>" alt="<?php echo $img['alt']; ?>"
           width="<?php echo $img['width']; ?>" height="<?php echo $img['height']; ?>" />
         <?php endwhile; ?>
       </div>

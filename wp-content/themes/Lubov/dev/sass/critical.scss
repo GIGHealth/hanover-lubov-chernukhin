@@ -183,6 +183,21 @@ source {
   padding: 0 20px;
 }
 
+.image-position-left {
+  object-position: left;
+}
+
+.image-position-right {
+  object-position: right;
+}
+
+.image-position-top {
+  object-position: top;
+}
+
+.image-position-bottom {
+  object-position: bottom;
+}
 //404 page 
 body.error404 {
   #primary {
@@ -240,4 +255,5 @@ body.error404 {
   opacity: 0;
   visibility: hidden
 }
+@import "./components/owl-carousel";
 @import "./components/hero";

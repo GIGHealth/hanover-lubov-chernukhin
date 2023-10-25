@@ -7,7 +7,7 @@
     $block_id = get_sub_field('block_id');
     $bg = get_sub_field('background_color');
   ?>
-  <div class="content-block<?php if($bg):?> bg-<?php echo $bg; endif; ?> pt-5 pb-5"
+  <div class="content-block<?php if($bg):?> bg-<?php echo $bg; endif; ?> pt-3 pb-3 pt-lg-5 pb-lg-5"
     <?php if($block_id):?>id="<?php echo $block_id; ?>" <?php endif; ?>>
     <?php if( have_rows('content_rows') ): 
         // loop through all the rows of flexible content
