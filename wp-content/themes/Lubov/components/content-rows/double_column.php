@@ -73,9 +73,13 @@ if($link){
           $img = get_sub_field('image_item');
 
           ?>
-        <img class="image image-position-carousel image-position-<?php echo esc_html ( get_sub_field('image_position') ); ?>" src="<?php echo $img['url']; ?>" alt="<?php echo $img['alt']; ?>"
-          width="<?php echo $img['width']; ?>" height="<?php echo $img['height']; ?>" />
-        <?php endwhile; ?>
+          <div class="image-wrapper position-relative">
+            <img class="image image-position-carousel image-position-<?php echo esc_html ( get_sub_field('image_position') ); ?>" src="<?php echo $img['url']; ?>" alt="<?php echo $img['alt']; ?>"
+            width="<?php echo $img['width']; ?>" height="<?php echo $img['height']; ?>" />
+            </div>
+
+          <?php endwhile; ?>
+      
       </div>
     </div>
     <?php endif; ?>
