@@ -24,8 +24,9 @@ article.post {
 
 .category-container {
     span {
-        font-size: 28px;
+        font-size: 20px;
         font-family: $manrope-font;
+        padding-right: 0;
     }
     .facetwp-facet-categories.facetwp-facet {
         display: flex;
@@ -38,14 +39,21 @@ article.post {
         .facetwp-radio {
             background: unset;
             padding-left: 0;
-            font-size: 28px;
+            font-size: 20px;
+            line-height: 30px;
+            margin-bottom: 0;
+            padding-bottom: 0;
             font-family: $manrope-font;
-            padding-bottom: 2px;
             &.checked {
                 background-image: unset;
-                border-bottom: 1px solid $orange;
+                &:nth-child(1) {
+                    border-bottom: 1px solid $orange;
+                }
+                
                 span {
                     color: $orange;
+                    border-bottom: 1px solid $orange;
+
                 }
                 
             }
@@ -143,7 +151,19 @@ a {
     }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1070px) {
+    .category-container {
+        span {
+            font-size: 17px;
+        }
+    }
+
+    .category-container .facetwp-facet-categories.facetwp-facet .facetwp-radio {
+        font-size: 17px
+    }
+}
+
+@media screen and (max-width: 901px) {
     .content-row.blog-view .blog-view-grid .facetwp-template {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -168,9 +188,50 @@ a {
     }
 }
 
+// @media screen and (max-width: 1024px) {
+//     .category-container {
+//         span {
+//             font-size: 17px;
+//         }
+//         .facetwp-facet-categories.facetwp-facet {
+//             .facetwp-radio {
+//                 font-size: 17px;
+//             }
+        
+//     }
+// }
+// }
+
+@media screen and (max-width: 992px) {
+    .category-container {
+        gap: 20px;
+        .facetwp-facet-categories.facetwp-facet {
+            flex-direction: column;
+        }
+    } 
+}
+
+@media screen and (max-width: 768px) {
+    .category-container {
+        span {
+            font-size: 24px;
+        }
+        .facetwp-facet-categories.facetwp-facet {
+            .facetwp-radio {
+                font-size: 24px;
+            }
+        
+    }
+}
+}
+
 @media screen and (max-width: 575px){
     .content-row.blog-view .blog-view-grid .facetwp-template {
         display: grid;
         grid-template-columns: repeat(1, 1fr);
+    }
+
+     .category-container {
+        text-align: center;
     }
 }
