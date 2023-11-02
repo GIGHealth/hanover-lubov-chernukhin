@@ -35,8 +35,8 @@ if($query->have_posts()):?>
 
 <section class="blog-view content-row">
   <div
-    class="blog-filters content-bounds d-flex flex-column flex-md-row align-items-center align-items-md-start justify-content-center justify-content-md-start pt-5 pb-4">
-    <div class="category-container d-flex flex-column flex-md-row align-items-center" data-aos="fade-up">
+    class="blog-filters content-bounds d-flex flex-column flex-lg-row align-items-center align-items-lg-start justify-content-center justify-content-lg-start pt-5 pb-5">
+    <div class="category-container d-flex flex-column flex-lg-row align-items-center" data-aos="fade-up">
       <span><?php echo $blogCategories;?></span>
       <?php echo do_shortcode('[facetwp facet="categories"]');?>
     </div>

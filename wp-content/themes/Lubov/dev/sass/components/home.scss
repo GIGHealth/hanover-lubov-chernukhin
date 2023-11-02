@@ -213,6 +213,13 @@ body.logged-in header {
     padding-top: 32px;
 }
 
+@media screen and (min-width: 992px) and (max-width: 1180px) {
+    body.home .double-column-inner .double-col-img-container, body.home .double-column-inner .double-col-copy {
+        padding-top: 48px;
+    }
+   
+}
+
 @media screen and (max-width: 901px) {
     body.home .front-page {
         .latest-blog-post-home {
