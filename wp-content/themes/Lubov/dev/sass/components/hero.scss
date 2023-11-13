@@ -172,11 +172,11 @@ body.blog, body.single {
 }
 
 
-@media screen and (max-width: 901px) {
-    .hero-content-top .hero-content-top-inner {
-        gap: 30px !important;
-    }
-}
+// @media screen and (max-width: 901px) {
+//     .hero-content-top .hero-content-top-inner {
+//         gap: 30px !important;
+//     }
+// }
 
 @media screen and (max-width: 991px) {
     .hero-content-top-inner {
@@ -205,17 +205,27 @@ body.blog, body.single {
     // }
 
     .hero-content-top .hero-content-top-inner {
-        gap: 30px;
+        gap: 70px;
     }
 }
 
 @media screen and (max-width: 991px) {
     .hero-content-top .hero-content-top-inner .hero-image {
-        @include responsiveImage(62.5%);
+        @include responsiveImage(40%);
+        max-width: 600px;
+    }
+}
+
+@media screen and (max-width: 901px) {
+    .hero-content-top .hero-content-top-inner .hero-image {
+        @include responsiveImage(50%);
     }
 }
 
 @media screen and (max-width: 768px) {
+    .hero-content-top .hero-content-top-inner .hero-image {
+        @include responsiveImage(56.5%);
+    }
     .hero-content-bottom .hero-content-bottom-two-col .hero-subtitle {
         h2 {
         font-size: 30px;
@@ -234,6 +244,9 @@ body.blog, body.single {
 }
 
 @media screen and (max-width: 575px) {
+    .hero-content-top .hero-content-top-inner .hero-image {
+        @include responsiveImage(65.5%);
+    }
     .hero-graph {
         .hero-graph-inner {
             height: unset;
