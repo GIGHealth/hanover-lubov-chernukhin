@@ -1,0 +1,21 @@
+.body-copy-content p, .body-copy-content li {
+    font-family: $manrope-font;
+    font-size: 22px;
+    line-height: 30px;
+      a {
+        font-size: 22px;
+        line-height: 30px;
+        font-family: $manrope-font;
+        color: $orange;
+        text-decoration: underline;
+    }
+}
+
+.body-copy-content {
+    h3 {
+        font-size: 43px;
+      line-height: 54px;
+      font-family: playfair-display,serif;
+      margin-bottom: 24px;
+      }
+}

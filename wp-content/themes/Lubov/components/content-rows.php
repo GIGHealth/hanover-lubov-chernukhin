@@ -28,6 +28,9 @@
         if( get_row_layout() == 'links' )
         get_template_part('components/content-rows/links');
 
+        if( get_row_layout() == 'full_width_body_copy_block' )
+        get_template_part('components/content-rows/full_width_body_copy');
+
         endwhile; // close the loop of flexible content
         endif; // close flexible content conditional ?>
   </div>
