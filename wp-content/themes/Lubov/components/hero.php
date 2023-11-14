@@ -47,8 +47,13 @@ $toggleGraph = get_field('toggle_graph');
                   <div class="prenumgraph-copy" data-aos="zoom-in" data-aos-delay="100">
                     <p><?php echo $prenumcopy; ?></p>
                   </div>
+                  <?php else:?>
+                  <div class="empty-prenumgraph-copy">
+                  </div>
                   <?php endif; ?>
-                  <div class="number counter" data-aos="zoom-in" data-aos-delay="100"><?php echo $number; ?></div>
+                  <div class="number" data-aos="zoom-in" data-aos-delay="100">
+                    <p class="countern number"><?php echo $number; ?></p>
+                  </div>
                   <div class="graph-copy" data-aos="zoom-in" data-aos-delay="100">
                     <p><?php echo $copy; ?></p>
                   </div>

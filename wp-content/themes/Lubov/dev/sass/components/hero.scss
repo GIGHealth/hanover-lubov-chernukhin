@@ -134,9 +134,15 @@
           .number {
             color: $orange;
             font-size: 72px;
-            font-family: $playfair-font;
-            margin-top: -35px;
+            line-height: 50px;
+            font-family: $manrope-font;
+            // margin-top: -35px;
             margin-bottom: 0;
+            
+          }
+          .empty-prenumgraph-copy {
+            width: 100%;
+            height: 16px;
           }
           .graph-copy p, .prenumgraph-copy p {
             text-align: center;
@@ -231,6 +237,18 @@ body.blog, body.single {
         font-size: 30px;
         line-height: 40px;
         }
+        p {
+            font-family: $manrope-font;
+            font-size: 22px;
+            line-height: 30px;
+        }
+        a {
+            font-size: 22px;
+            line-height: 30px;
+            font-family: "Manrope", Arial, Helvetica, sans-serif;
+            color: #BA4522;
+            text-decoration: underline;
+        }
     }
 
     .hero-content-bottom-full-width {
@@ -250,11 +268,10 @@ body.blog, body.single {
     .hero-graph {
         .hero-graph-inner {
             height: unset;
-            width: unset;
+            width: 100%;
             .graph-col {
                 .number {
                     font-size: 50px;
-                    margin-top: -24px;
                 }
             }
         }
