@@ -59,6 +59,18 @@
                 font-family: $manrope-font;
                 font-weight: 400;
                 }
+                p {
+                    font-family: $manrope-font;
+                    font-size: 22px;
+                    line-height: 30px;
+                    a {
+                        font-size: 22px;
+                        line-height: 30px;
+                        font-family: "Manrope", Arial, Helvetica, sans-serif;
+                        color: #BA4522;
+                        text-decoration: underline;
+                    }
+                }
             }
             .hero-subtitle, .hero-graph {
                 flex: 1;
@@ -236,18 +248,6 @@ body.blog, body.single {
         h2 {
         font-size: 30px;
         line-height: 40px;
-        }
-        p {
-            font-family: $manrope-font;
-            font-size: 22px;
-            line-height: 30px;
-        }
-        a {
-            font-size: 22px;
-            line-height: 30px;
-            font-family: "Manrope", Arial, Helvetica, sans-serif;
-            color: #BA4522;
-            text-decoration: underline;
         }
     }
 
