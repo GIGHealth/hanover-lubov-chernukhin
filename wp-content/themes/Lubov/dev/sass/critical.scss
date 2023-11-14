@@ -47,6 +47,13 @@ p {
   font-family: $manrope-font;
   font-size: 22px;
   line-height: 30px;
+  a {
+    font-size: 22px;
+    line-height: 30px;
+    font-family: "Manrope", Arial, Helvetica, sans-serif;
+    color: #BA4522;
+    text-decoration: underline;
+}
 }
 
 .no-padding-bottom {
@@ -231,6 +238,14 @@ body.error404 {
   h1 {
     font-size: 68px;
     line-height: 68px;
+  }
+  p {
+    font-size: 20px;
+    line-height: 28px;
+    a {
+      font-size: 20px !important;
+      line-height: 28px !important;
+    }
   }
 }
 
