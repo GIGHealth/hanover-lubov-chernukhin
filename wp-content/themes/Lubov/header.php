@@ -2,6 +2,9 @@
 <html <?php language_attributes(); ?> class="no-js">
 
 <head>
+  	<!-- Start cookieyes banner -->
+	<script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/c2c5ada4f5d3533d8b053bb8/script.js"></script>
+	<!-- End cookieyes banner -->
   <meta charset="<?php bloginfo( 'charset' ); ?>">
   <title><?php wp_title( '' ); ?><?php if ( wp_title( '', false ) ) { echo ' : '; } ?><?php bloginfo( 'name' ); ?>
   </title>
