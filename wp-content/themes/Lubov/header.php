@@ -6,8 +6,6 @@
   <title><?php wp_title( '' ); ?><?php if ( wp_title( '', false ) ) { echo ' : '; } ?><?php bloginfo( 'name' ); ?>
   </title>
 
-  <link href="//www.google-analytics.com" rel="dns-prefetch">
-  <link rel="dns-prefetch" href="//www.google-analytics.com">
   <link rel="dns-prefetch" href="//diffuser-cdn.app-us1.com">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
