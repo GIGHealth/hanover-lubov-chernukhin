@@ -6,6 +6,13 @@
         left:0;
         z-index: 50;
         width: 100%;
+
+        .menu-item.current-menu-item a  {
+            background: $creme;
+            span {
+                color: $orange;
+            }
+        }
        
         &.hero-scrolled {
             background: $creme;
@@ -32,6 +39,13 @@
                     }
                 }
             }
+
+            .menu-item.current-menu-item a  {
+                span {
+                    border-bottom: 1px solid $orange;
+                }
+            }
+        }
         }
         .header-inner {
             padding: 25px 20px;
@@ -56,9 +70,10 @@
                         }
                     }
                 }
+
+
             }
         }
-    }
     #menuToggle {
         position: relative;
         z-index: 1;
