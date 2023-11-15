@@ -1316,16 +1316,12 @@ footer .copyright {
   margin-bottom: 50px;
 }
 
-body.privacy-policy .legal-page-inner p, body.privacy-policy .legal-page-inner ul li {
+body.privacy-policy .legal-page-inner p, body.privacy-policy .legal-page-inner ul li, body.privacy-policy .legal-page-inner a {
   font-size: 20px;
   line-height: 28px;
   font-family: "Manrope", Arial, Helvetica, sans-serif;
 }
 body.privacy-policy .legal-page-inner p a {
-  font-size: 20px;
-  line-height: 28px;
-}
-body.privacy-policy .legal-page-inner a {
   font-size: 20px;
   line-height: 28px;
 }
