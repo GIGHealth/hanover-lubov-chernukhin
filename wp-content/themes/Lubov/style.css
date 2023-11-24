@@ -1406,7 +1406,7 @@ a .blog-bottom p.date {
   font-family: "Manrope", Arial, Helvetica, sans-serif;
 }
 
-.blog-content p, .blog-content p a {
+.blog-content p, .blog-content a {
   font-size: 18px;
   line-height: 28px;
   font-family: "Manrope", Arial, Helvetica, sans-serif;
