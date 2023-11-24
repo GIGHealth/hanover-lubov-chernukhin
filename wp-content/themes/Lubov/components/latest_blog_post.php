@@ -35,7 +35,7 @@ $concat = get_query_var( 'concat' );
         </div>
         <?php if(has_excerpt()):?><div class="excerpt"><p><?php echo get_the_excerpt(); ?></p></div><?php endif; ?>
       <div class="post-info">
-        <p class="date"><?php echo get_the_date('j F');?></p>
+        <p class="date"><?php echo get_the_date('j F Y');?></p>
       </div>
     </div>
 </a>

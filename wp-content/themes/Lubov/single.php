@@ -10,7 +10,7 @@
                 <div class="hero-title">
                 <h1 style="opacity: 0;"><?php echo get_the_title(); ?></h1>
                 <div class="date-container pt-0 mt-4" style="opacity: 0;">
-                    <p><?php echo get_the_date('j F');?></p>
+                    <p><?php echo get_the_date('j F Y');?></p>
                 </div>
                 </div>
             </div>
