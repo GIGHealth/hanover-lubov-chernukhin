@@ -212,6 +212,14 @@ source {
 .blog-top .image-container {
   @include responsiveImage(70%);
 } 
+article .blog-content p a {
+  font-size: 18px !important;
+  line-height: 28px !important;
+  font-family: $manrope-font;
+  &:hover {
+    color: $green;
+  }
+}
 //404 page 
 body.error404 {
   #primary {
@@ -239,11 +247,7 @@ body.error404 {
   }
 }
 
-article .blog-content p a {
-  font-size: 18px !important;
-  line-height: 28px !important;
-  font-family: $manrope-font;
-}
+
 
 @media screen and (max-width: 768px) {
   h1 {
