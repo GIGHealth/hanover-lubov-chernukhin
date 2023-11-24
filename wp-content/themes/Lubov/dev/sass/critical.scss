@@ -239,6 +239,12 @@ body.error404 {
   }
 }
 
+article .blog-content p a {
+  font-size: 18px !important;
+  line-height: 28px !important;
+  font-family: $manrope-font;
+}
+
 @media screen and (max-width: 768px) {
   h1 {
     font-size: 68px;
