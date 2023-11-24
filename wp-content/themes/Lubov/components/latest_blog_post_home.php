@@ -30,7 +30,7 @@ $concat = get_query_var( 'concat' );
             <p class="title"><?php echo $title;?></p>
         </div>
       <div class="post-info">
-        <p class="date"><?php echo get_the_date('j F');?></p>
+        <p class="date"><?php echo get_the_date('j F Y');?></p>
       </div>
     </div>
   </a>
