@@ -91,9 +91,15 @@ a {
     }
 }
 
-.blog-content p, .blog-content a {
+.blog-content p {
     font-size: 18px;
     line-height: 28px;
+    font-family: $manrope-font;
+}
+
+.blog-content p a {
+    font-size: 18px !important;
+    line-height: 28px !important;
     font-family: $manrope-font;
 }
 
