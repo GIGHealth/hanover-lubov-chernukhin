@@ -91,19 +91,11 @@ a {
     }
 }
 
-.blog-content p {
+.blog-content p, .blog-content p a {
     font-size: 18px;
     line-height: 28px;
     font-family: $manrope-font;
-
 }
-
-.image-container {
-    img {
-        width: 100%;
-        height: auto;
-    }  
-} 
 
 .back-to-blog {
     border: 0;

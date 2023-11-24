@@ -207,6 +207,11 @@ source {
 .image-position-bottom {
   object-position: bottom;
 }
+
+//blog image 
+.blog-top .image-container {
+  @include responsiveImage(70%);
+} 
 //404 page 
 body.error404 {
   #primary {
