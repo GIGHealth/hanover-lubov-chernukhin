@@ -20,7 +20,7 @@
             .header-inner nav span {
                 color: $orange;
                 transition: 150ms linear color;
-                font-family: $manrope-font;
+                // font-family: $manrope-font;
                 &:hover {
                     color: $green;
                     transition: 150ms linear color;
@@ -71,7 +71,6 @@
                         }
                     }
                 }
-
 
             }
         }
