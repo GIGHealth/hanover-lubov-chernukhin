@@ -8,6 +8,7 @@
 
   <link rel="dns-prefetch" href="//diffuser-cdn.app-us1.com">
 
+  <link rel="preconnect" href="https://use.typekit.net">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -18,7 +19,7 @@
   <link rel="icon" type="image/png" sizes="16x16"
     href="<?php echo get_template_directory_uri(); ?>/img/icons/favicon-16x16.png">
   <link rel="mask-icon" href="<?php echo get_template_directory_uri(); ?>/img/icons/safari-pinned-tab.svg"
-  content="#163216">
+    content="#163216">
   <meta name="msapplication-TileColor" content="#163216">
   <meta name="theme-color" content="#163216">
 
@@ -33,7 +34,10 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet"> -->
+  <!-- Rob added to defer -->
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet"
+    media="print" onload="this.media='all'">
 
   <?php wp_head(); ?>
 
@@ -65,24 +69,25 @@
 
 
   <!-- PRELOADS -->
-  <body <?php body_class(); ?>>
+
+<body <?php body_class(); ?>>
   <!-- wrapper -->
   <div class="wrapper">
 
     <!-- header -->
     <header role="banner" class="header show-me">
-        <div class="header-inner site-bounds">
-          <a class="nav-logo" href="<?php echo get_home_url(); ?>"><span class="sr-only">Go Home</span>
-            <?php echo logo();?></a>
-          <nav class="nav" id="mmenuMain"><?php main_nav(); ?></nav>
-          <div class="burger-container">
-						<ul class="burger">
-							<li class="one"></li>
-							<li class="two"></li>
-							<li class="three"></li>
-							<li class="four"></li>
-						</ul>
-					</div>
+      <div class="header-inner site-bounds">
+        <a class="nav-logo" href="<?php echo get_home_url(); ?>"><span class="sr-only">Go Home</span>
+          <?php echo logo();?></a>
+        <nav class="nav" id="mmenuMain"><?php main_nav(); ?></nav>
+        <div class="burger-container">
+          <ul class="burger">
+            <li class="one"></li>
+            <li class="two"></li>
+            <li class="three"></li>
+            <li class="four"></li>
+          </ul>
         </div>
-      </header>
+      </div>
+    </header>
     <!-- /header -->
