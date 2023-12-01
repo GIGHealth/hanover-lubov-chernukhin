@@ -1,14 +1,15 @@
-.double-column p, .double-column li {
-    font-family: $manrope-font;
+.double-column p,
+.double-column li {
+  font-family: $manrope-font;
+  font-size: 22px;
+  line-height: 30px;
+  a {
     font-size: 22px;
     line-height: 30px;
-      a {
-        font-size: 22px;
-        line-height: 30px;
-        font-family: $manrope-font;
-        color: $orange;
-        text-decoration: underline;
-    }
+    font-family: $manrope-font;
+    color: $orange;
+    text-decoration: underline;
+  }
 }
 
 .double-column li {
@@ -16,57 +17,58 @@
 }
 
 .double-column-inner {
-    gap: 50px;
-    h3 {
-      font-size: 43px;
+  gap: 50px;
+  h3 {
+    font-size: 43px;
     line-height: 54px;
-    font-family: playfair-display,serif;
-    }
+    font-family: playfair-display, serif;
+  }
 }
 
 .link-container {
-    a {
-        text-decoration: none;
-        @extend %buttonLine;
-        padding-bottom: 4px;
-    }
-    .link-text {
-      color: $orange;
-      font-family: $title-font;
-      font-size: 23px !important;
-      line-height: 33px !important;
-      letter-spacing: 1.25px;
-    }
-    .arrow-right {
-        padding-left: 8px;
-    }
+  a {
+    text-decoration: none;
+    @extend %buttonLine;
+    padding-bottom: 4px;
+  }
+  .link-text {
+    color: $orange;
+    font-family: $title-font;
+    font-size: 23px !important;
+    line-height: 33px !important;
+    letter-spacing: 1.25px;
+  }
+  .arrow-right {
+    padding-left: 8px;
+  }
 }
 
 .bg-green {
   h3 {
     color: white;
   }
-    .button.link {
-      @extend %buttonLine;
-      padding-bottom: 4px;
-      .link-text {
-        color: white;
-        font-family: $title-font;
-        font-size: 23px;
-        line-height: 33px;
-        letter-spacing: 1.25px;
-      }
-      .arrow-right {
-          padding-left: 8px;
-      }
+  .button.link {
+    @extend %buttonLine;
+    padding-bottom: 4px;
+    .link-text {
+      color: white;
+      font-family: $title-font;
+      font-size: 23px;
+      line-height: 33px;
+      letter-spacing: 1.25px;
     }
+    .arrow-right {
+      padding-left: 8px;
+    }
+  }
 }
 
 .slide-copy {
   display: none;
 }
 
-.slide-link, .slide-link-close {
+.slide-link,
+.slide-link-close {
   color: $orange;
   font-family: $title-font;
   font-size: 23px;
@@ -75,7 +77,7 @@
   cursor: pointer;
   .arrow-right {
     padding-left: 8px;
-}
+  }
 }
 
 .slide-link-container {
@@ -86,52 +88,49 @@
   text-decoration: none;
   padding-bottom: 4px;
   cursor: pointer;
+  svg {
+    transition: all 0.3s ease-in-out;
+  }
+  &:hover {
     svg {
+      transform: rotate(90deg);
       transition: all 0.3s ease-in-out;
     }
-    &:hover {
-      svg {
-        transform: rotate(90deg);
-        transition: all 0.3s ease-in-out;
-      }
-    }
+  }
 }
 
 .slide-link-close-container {
   @extend %buttonLine;
   text-decoration: none;
-    padding-bottom: 4px;
-    cursor: pointer;
+  padding-bottom: 4px;
+  cursor: pointer;
+  svg {
+    transition: all 0.3s ease-in-out;
+  }
+  &:hover {
     svg {
+      transform: rotate(-90deg);
       transition: all 0.3s ease-in-out;
     }
-    &:hover {
-      svg {
-        transform: rotate(-90deg);
-        transition: all 0.3s ease-in-out;
-      }
-    }
   }
+}
 
-
-
-
-  @media screen and (max-width: 901px) {
-    .carousel-wrap {
-        width: 100%;
-      }
+@media screen and (max-width: 901px) {
+  .carousel-wrap {
+    width: 100%;
   }
+}
 
-  @media screen and (max-width: 768px) {
-    .double-column p, .double-column li {
-      font-size: 20px;
-      line-height: 28px;
+@media screen and (max-width: 768px) {
+  .double-column p,
+  .double-column li {
+    font-size: 20px;
+    line-height: 28px;
   }
   .double-column-inner {
     h3 {
       font-size: 40px;
-    line-height: 50px;
+      line-height: 50px;
     }
-}
-
+  }
 }
