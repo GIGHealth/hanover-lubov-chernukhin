@@ -603,15 +603,15 @@ if( function_exists('acf_add_options_page') ) {
 		'capability'	=> 'edit_posts',
 		'redirect'		=> false
 	));
-	acf_add_options_page(array(
-		'page_title' 	=> 'Pipeline Data',
-		'menu_title'	=> 'Pipeline Data',
-		'menu_slug' 	=> 'pipeline-data',
-    'position'    => 7,
-		'capability'	=> 'edit_posts',
-		'redirect'		=> false,
-    'icon_url' => 'dashicons-images-alt2', // Add this line and replace the second inverted commas with class of the icon you like
-	));
+	// acf_add_options_page(array(
+	// 	'page_title' 	=> 'Pipeline Data',
+	// 	'menu_title'	=> 'Pipeline Data',
+	// 	'menu_slug' 	=> 'pipeline-data',
+  //   'position'    => 7,
+	// 	'capability'	=> 'edit_posts',
+	// 	'redirect'		=> false,
+  //   'icon_url' => 'dashicons-images-alt2', // Add this line and replace the second inverted commas with class of the icon you like
+	// ));
 	
 }
 
