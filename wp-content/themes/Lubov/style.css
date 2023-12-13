@@ -1827,10 +1827,23 @@ body.logged-in header {
     left: 3%;
   }
 }
+@media screen and (max-width: 575px) {
+  .hero-img {
+    max-height: 700px !important;
+    min-height: 700px !important;
+  }
+}
 @media screen and (max-width: 400px) {
+  body.home .front-page .hero-title .hero-title-inner {
+    transform: translate(0, -20%);
+  }
   body.home .front-page .hero-title .hero-title-inner h1 {
-    font-size: 50px;
-    line-height: 50px;
+    font-size: 40px;
+    line-height: 40px;
+  }
+  body.home .front-page .hero-img {
+    max-height: 600px !important;
+    min-height: 600px !important;
   }
 }
 .share .a2a_kit {
