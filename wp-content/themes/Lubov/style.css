@@ -1695,11 +1695,13 @@ body.home .double-column-bottom {
 body.home .double-column-bottom .double-col-img-container {
   margin-bottom: -50px;
 }
-body.home .double-column-inner .double-col-img-container, body.home .double-column-inner .double-col-copy {
+body.home .double-column-inner .double-col-img-container,
+body.home .double-column-inner .double-col-copy {
   flex: 1;
   gap: 20px;
 }
-body.home .double-column-inner .double-col-img-container p, body.home .double-column-inner .double-col-copy p {
+body.home .double-column-inner .double-col-img-container p,
+body.home .double-column-inner .double-col-copy p {
   font-size: 26px;
   line-height: 37px;
   font-family: "Manrope", Arial, Helvetica, sans-serif;
@@ -1739,7 +1741,8 @@ body.home .latest-blog-post-home .blog-article .post-title p {
   line-height: 48px;
   transition: 150ms ease-in-out;
 }
-body.home .latest-blog-post-home .blog-article a, body.home .latest-blog-post-home .blog-article p {
+body.home .latest-blog-post-home .blog-article a,
+body.home .latest-blog-post-home .blog-article p {
   color: #FDF2ED;
 }
 body.home .latest-blog-post-home .blog-article .post-info {
@@ -1761,7 +1764,8 @@ body.logged-in header {
 }
 
 @media screen and (min-width: 992px) and (max-width: 1180px) {
-  body.home .double-column-inner .double-col-img-container, body.home .double-column-inner .double-col-copy {
+  body.home .double-column-inner .double-col-img-container,
+  body.home .double-column-inner .double-col-copy {
     padding-top: 48px;
   }
 }
@@ -1802,7 +1806,8 @@ body.logged-in header {
     font-size: 30px;
     line-height: 44px;
   }
-  body.home .front-page .double-col-img-container p, body.home .front-page .double-col-copy p {
+  body.home .front-page .double-col-img-container p,
+  body.home .front-page .double-col-copy p {
     font-size: 24px;
     line-height: 35px;
   }
@@ -1831,6 +1836,20 @@ body.logged-in header {
   .hero-img {
     max-height: 700px !important;
     min-height: 700px !important;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .hero-content:before {
+    pointer-events: none;
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    background: rgba(0, 0, 0, 0.6);
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 26%, rgba(0, 0, 0, 0.6) 97%);
   }
 }
 @media screen and (max-width: 400px) {
