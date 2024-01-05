@@ -65,6 +65,10 @@
   <link rel='stylesheet' id='customStyle' href='<?php echo get_template_directory_uri(); ?>/style.css' media=" print"
     onload="this.media='all'" />
 
+  <!-- Custom Style -->
+  <link rel='stylesheet' id='hotfixStyle' href='<?php echo get_template_directory_uri(); ?>/hotfix.css' media=" print"
+    onload="this.media='all'" />
+
   <?php include (TEMPLATEPATH . '/criticalCSS.php'); ?>
 
 
