@@ -30,6 +30,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="<?php bloginfo( 'description' ); ?>">
 
+
+  <?php if( is_front_page() ): ?>
+    <?php $heroImg = get_field('home_hero_image'); ?>
+    <?php if ($heroImg): ?> 
+    <link rel="preload" as="image" href="<?php echo $heroImg['url'];?>" />
+    <?php endif; ?>
+  <?php endif; ?>
+
   <link rel="stylesheet" href="https://use.typekit.net/jom6plh.css">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
