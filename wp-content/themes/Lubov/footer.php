@@ -25,7 +25,7 @@ $linkedin = get_field('linkedin', 'option');
             </div>
             <div class="footer-right">
               <?php if($linkedin): ?>
-              <a rel="noopener" href="<?php echo the_field('linkedin', 'option'); ?>"><span class="sr-only">Go to
+              <a rel="noopener" href="<?php echo $linkedin; ?>"><span class="sr-only">Go to
                   LinkedIn</span><?php echo linkedIn();?></a>
               <?php endif;?>
             </div>
