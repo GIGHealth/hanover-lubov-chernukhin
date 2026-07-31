@@ -1,6 +1,7 @@
 <?php
 $copyright = get_field('copyright', 'option');
 $linkedin = get_field('linkedin', 'option');
+$twitter = get_field('twitter', 'option');
 ?>
 
 
@@ -9,25 +10,31 @@ $linkedin = get_field('linkedin', 'option');
     <div class="footer-content">
       <div class="footer-container bottom footer-container-bottom">
         <div class="footer-container-inner content-bounds">
-          <div class="footer-container-inner-content d-flex align-items-center flex-column flex-md-row justify-content-between">
+          <div
+            class="footer-container-inner-content d-flex align-items-center flex-column flex-md-row justify-content-between">
             <div class="footer-left d-flex flex-column flex-md-row align-items-center justify-content-center">
               <!-- copyright -->
               <p class="copyright">
-                &copy; <?php echo $copyright;?>
+                &copy; <?php echo $copyright; ?>
               </p>
               <!-- /copyright -->
               <?php
-              wp_nav_menu( array( 
-                'theme_location' => 'footer-menu', 
-                'container_class' => 'footer-menu d-flex' ) ); 
+              wp_nav_menu(array(
+                'theme_location' => 'footer-menu',
+                'container_class' => 'footer-menu d-flex'
+              ));
               ?>
 
             </div>
-            <div class="footer-right">
-              <?php if($linkedin): ?>
-              <a rel="noopener" href="<?php echo $linkedin; ?>"><span class="sr-only">Go to
-                  LinkedIn</span><?php echo linkedIn();?></a>
-              <?php endif;?>
+            <div class="footer-right d-flex flex-row justify-content-center align-items-center">
+              <?php if ($linkedin): ?>
+                <a target="_blank" rel="noopener" href="<?php echo $linkedin; ?>"><span class="sr-only">Go to
+                    LinkedIn</span><?php echo linkedIn(); ?></a>
+              <?php endif; ?>
+              <?php if ($twitter): ?>
+                <a target="_blank" class="ps-3" rel="noopener" href="<?php echo $twitter; ?>"><span class="sr-only">Go to
+                    Twitter</span><?php echo xLogo(); ?></a>
+              <?php endif; ?>
             </div>
           </div>
         </div>
@@ -41,7 +48,8 @@ $linkedin = get_field('linkedin', 'option');
 <?php wp_footer(); ?>
 <div class="mobile-menu-container">
   <div class="site-bounds h-100 d-flex flex-column">
-    <nav class="mobile-nav flex-grow-1 d-flex justify-content-center align-items-center" role="navigation" aria-label="navigation">
+    <nav class="mobile-nav flex-grow-1 d-flex justify-content-center align-items-center" role="navigation"
+      aria-label="navigation">
       <?php main_nav(); ?>
     </nav>
   </div>
