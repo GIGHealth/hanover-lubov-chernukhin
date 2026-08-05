@@ -32,7 +32,8 @@ $twitter = get_field('twitter', 'option');
                     LinkedIn</span><?php echo linkedIn(); ?></a>
               <?php endif; ?>
               <?php if ($twitter): ?>
-                <a target="_blank" class="ps-3" rel="noopener" href="<?php echo $twitter; ?>"><span class="sr-only">Go to
+                <a target="_blank" class="ps-3 twitter-logo" rel="noopener" href="<?php echo $twitter; ?>"><span
+                    class="sr-only">Go to
                     Twitter</span><?php echo xLogo(); ?></a>
               <?php endif; ?>
             </div>
