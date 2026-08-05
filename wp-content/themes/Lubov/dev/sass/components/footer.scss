@@ -1,73 +1,71 @@
 footer {
-    background: white;
-    .footer-container-inner {
-        padding: 40px 20px;
-        p, ul li a, ul {
-            color: $dark;
-            font-size: 16px;
-            line-height: 22px;
-            margin: 0;
-        }
-        li {
-            transition: 150ms linear color;
-        }
-        li:hover a {
-            color: $orange;
-            transition: 150ms linear color;
-        }
+  background: white;
+  .footer-container-inner {
+    padding: 40px 20px;
+    p,
+    ul li a,
+    ul {
+      color: $dark;
+      font-size: 16px;
+      line-height: 22px;
+      margin: 0;
     }
-    #menu-footer-menu {
-        display: flex;
-        list-style-type: none;
-        padding-left: 0;
-        gap: 20px;
-        font-family: $playfair-font;
-        a {
-            text-decoration: none;
-        }
+    li {
+      transition: 150ms linear color;
     }
-    .footer-right {
-        .logo:hover {
-            svg {
-                transition: 150ms linear color;
-            }
-            svg path {
-                fill: $orange;
-                transition: 150ms linear color;
-            }
-        }
+    li:hover a {
+      color: $orange;
+      transition: 150ms linear color;
     }
+  }
+  #menu-footer-menu {
+    display: flex;
+    list-style-type: none;
+    padding-left: 0;
+    gap: 20px;
+    font-family: $playfair-font;
+    a {
+      text-decoration: none;
+    }
+  }
+  .footer-right {
+    .logo:hover {
+      svg {
+        transition: 150ms linear color;
+      }
+      svg path {
+        fill: $orange;
+        transition: 150ms linear color;
+      }
+    }
+    .twitter-logo svg {
+      width: 20px;
+      margin-bottom: -2px;
+    }
+  }
 
-    .copyright {
-        padding-right: 20px;
-        font-family: $playfair-font;
-    }
+  .copyright {
+    padding-right: 20px;
+    font-family: $playfair-font;
+  }
 }
 
 @media screen and (max-width: 768px) {
-    footer .footer-container-inner {
-        #menu-footer-menu {
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            gap: 10px;
-
-        }
-        .footer-container-inner-content {
-            gap: 10px;
-            .footer-left {
-                gap: 10px;
-            }
-            .copyright {
-                padding-right: 0;
-            }
-        }
-
+  footer .footer-container-inner {
+    #menu-footer-menu {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
     }
-    
+    .footer-container-inner-content {
+      gap: 10px;
+      .footer-left {
+        gap: 10px;
+      }
+      .copyright {
+        padding-right: 0;
+      }
+    }
+  }
 }
-
-
-
-
-
